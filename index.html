@@ -91,40 +91,94 @@
         <h1>休暇申請アプリ</h1>
     </header>
 
-    <div class="container">
-        <!-- ユーザープロフィール情報のセクション -->
-        <div class="section" id="userProfileSection">
-            <h2>ユーザーのプロフィール情報</h2>
-            <p>woff.getProfile() メソッドでログイン中のユーザーのプロフィール情報を取得して表示しています。</p>
-            <div id="userProfileInfo"></div>
-        </div>
-
-        <!-- 位置情報のセクション -->
-        <div class="section">
-            <h2>休暇申請</h2>
-            <p>休暇申請を受け付けます</p>
-            <button class="btn" id="getLocationBtn">申請はこちら</button>
-            <div id="locationInfo"></div>
-            <button class="btn" id="sendLocationBtn">取得した位置情報を送信</button>
-        </div>
-
-        <!-- QRコードリーダーのセクション -->
-        <div class="section">
-            <h2>QRコードをスキャンする</h2>
-            <p>woff.scanQR() メソッドで QR コードリーダーを起動して QR コードの読み込みを行います。</p>
-            <button class="btn" id="scanQRBtn">QR コードリーダーを起動</button>
-            <div id="qrResult"></div>
-            <button class="btn" id="sendQRDataBtn">取得したQRコード情報を送信</button>
-        </div>
-
-        <!-- アプリ終了のセクション -->
-        <div class="section">
-            <h2>アプリを終了する</h2>
-            <p>woff.closeWindow() メソッドで WOFF アプリを終了します。</p>
-            <button class="btn" id="exitAppBtn">アプリを終了</button>
-        </div>
+    <div class="wrapper">
+        <form action="#">
+            <div class="form-title">
+                <h2>Form Title</h2>
+                <p>
+                    This is sample form.
+                </p>
+            </div>
+            <div class="input-flex">
+                <div class="input-control">
+                    <label for="FirstName" class="form-label required">FirstName</label>
+                    <input type="text" id="FirstName" name="FirstName" value="" class="form-input">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <label for="LastName" class="form-label required">LastName</label>
+                    <input type="text" id="LastName" name="LastName" value="" class="form-input">
+                    <div class="error"></div>
+                </div>
+            </div>
+            <div class="input-flex">
+                <div class="input-control">
+                    <label for="BirthDate" class="form-label required">BirthDate</label>
+                    <input type="date" id="BirthDate" name="BirthDate" value="" class="form-input">
+                    <div class="error"></div>
+                </div>
+                <div class="input-control">
+                    <label for="From" class="form-label required">From</label>
+                    <input type="email" id="From" name="From" value="" class="form-input">
+                    <div class="error"></div>
+                </div>
+            </div>
+            <div class="input-control">
+                <label for="EmailAddress" class="form-label required">EmailAddress</label>
+                <input type="email" id="EmailAddress" name="EmailAddress" value="" class="form-input">
+                <div class="error"></div>
+            </div>
+            <div class="mb-3 input-control">
+                <label for="Password" class="form-label required">Password</label>
+                <input type="password" id="Password" name="Password" value="" class="form-input">
+                <div class="error"></div>
+            </div>
+            <div class="mb-3 input-control">
+                <label for="PasswordConfirm" class="form-label required">PasswordConfirm</label>
+                <input type="password" id="PasswordConfirm" name="PasswordConfirm" value="" class="form-input">
+                <div class="error"></div>
+            </div>
+            <div class="mb-3 input-control">
+                <label for="fruits" class="form-label">Favorite Fruits</label>
+                <select name="fruits" id="fruits" class="form-select">
+                    <option name="00">選択してください 。</option>
+                    <option name="01">りんご</option>
+                    <option name="02">もも</option>
+                    <option name="03">バナナ</option>
+                    <option name="04">梨</option>
+                    <option name="05">ぶどう</option>
+                    <option name="99">その他</option>
+                </select>
+                <div class="error"></div>
+            </div>
+            <div class="mb-3">
+                <label for="" class="form-label required">Item</label>
+                <div class="radio-area input-control">
+                    <div style="text-align:left;" class="error"></div>
+                    <input type="radio" id="Item-1" name="Item" value="Item-1" class="radio-input">
+                    <label for="Item-1" class="radio-label">Item-1</label>
+                    <input type="radio" id="Item-2" name="Item" value="Item-2" class="radio-input">
+                    <label for="Item-2" class="radio-label">Item-2</label>
+                    <input type="radio" id="Item-3" name="Item" value="Item-3" class="radio-input">
+                    <label for="Item-3" class="radio-label">Item-3</label>
+                    <input type="radio" id="Item-4" name="Item" value="Item-4" class="radio-input">
+                    <label for="Item-4" class="radio-label">Item-4</label>
+                    <input type="radio" id="Item-5" name="Item" value="Item-5" class="radio-input">
+                    <label for="Item-5" class="radio-label">Item-5</label>
+                    <input type="radio" id="Item-6" name="Item" value="Item-6" class="radio-input">
+                    <label for="Item-6" class="radio-label">Item-6</label>
+                </div>
+            </div>
+            <div class="mb-3 input-control">
+                <label for="AcceptPolicy" class="checkbox-label">
+                    <input type="checkbox" id="AcceptPolicy" name="AcceptPolicy" value=""> &nbsp;AcceptPolicy is <a
+                        href="#">here</a>.
+                </label>
+                <div class="error"></div>
+            </div>
+            <input type="submit" id="SubmitBtn" name="SubmitBtn" value="Sign Up" class="btn">
+        </form>
     </div>
-
     <script>
         function getLocation() {
             if (navigator.geolocation) {
