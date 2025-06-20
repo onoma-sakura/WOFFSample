@@ -270,11 +270,15 @@
                     case '02': //有給休暇（半日）
                     case '05': //遅刻
                     case '06': //早退
+                        dateField.style.display = 'block';
                         timeField.style.display = 'block';
+                        reasonField.style.display = 'block';
                         break;
 
                     case '07': //振替休日
+                        dateField.style.display = 'block';
                         subDateField.style.display = 'block';
+                        reasonField.style.display = 'block';
                         break;
 
                     case '08': //自社業務
@@ -283,6 +287,7 @@
                         startTimeField.style.display = 'block';
                         endDateField.style.display = 'block';
                         endTimeField.style.display = 'block';
+                        reasonField.style.display = 'block';
                         break;
 
                     default:
