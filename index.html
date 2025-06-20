@@ -13,11 +13,11 @@
         @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
         :root {
-            --fluorescent-green: #66ff00;
+            --fluorescent-green: #cf800bd9;
         }
-
+        
         body {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
             background: linear-gradient(45deg, #ff980080, #cf800bd9);
@@ -52,36 +52,70 @@
             display: flex;
             flex-direction: column;
         }
+        .form-label {
+   　　　　 color: #536387;
+   　　　　 font-size: 1.6rem;
+   　　　　 line-height: 2.4rem;
+   　　　　 display: block;
+   　　　　 margin-bottom: 1rem;
+　　　　}
+        label.required:after {
+ 　　　　   margin-left: 1rem;
+  　　　　  padding: 0 .5rem;
+  　　　　  border-radius: .5rem;
+  　　　　  font-size: 1.1rem;
+  　　　　  color: white;
+  　　　　  background-color: #ff3860;
+   　　　　 content: "必須";
+　　　　}
 
+        .wrapper {
+    　　　　display: flex;
+    　　　　flex-direction: column;
+   　　　　 align-items: center;
+   　　　　 justify-content: center;
+   　　　　 padding: 4rem;
+　　　　}
+
+        .form-input {
+    　　　　text-align: left;
+   　　　　 width: 100%;
+   　　　　 padding: 1.5rem 2rem;
+  　　　　  border-radius: .5rem;
+  　　　　  border: .2rem solid #dde3ec;
+ 　　　　   background: #ffffff;
+ 　　　　   font-weight: 500;
+  　　　　  font-size: 1.6rem;
+ 　　　　   color: #536387;
+　　　　}
         .btn {
-            display: block;
-            margin: 20px 0;
-            padding: 15px 30px;
-            background-color: transparent;
-            color: #00c6ff;
-            text-align: center;
-            border: 2px solid #00c6ff;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-            align-self: center;
-            font-size: 18px;
-        }
+    　　　　display: block;
+   　　　　 width: 80%;
+   　　　　 margin: 0 auto;
+   　　　　 font-size: 1.6rem;
+   　　　　 border-radius: 2rem;
+   　　　　 padding: 1.5rem 2.5rem;
+   　　　　 border: none;
+   　　　　 font-weight: 500;
+  　　　　  background-color: #6a64f1;
+  　　　　  color: white;
+  　　　　  cursor: pointer;
+  　　　　  margin-top: 2rem;
+　　　　}
+        .input-control.success input {
+    　　　　border-color: #09c372;
+　　　　}
 
+　　　　.input-control.error input {
+   　　　　 border-color: #ff3860;
+　　　　}
 
-        .btn:hover {
-            background-color: var(--fluorescent-green);
-            color: #020b2e;
-        }
-
-        #sendLocationBtn,
-        #sendQRDataBtn {
-            display: none;
-        }
-
-        #sendQRBtn {
-            display: none;
-        }
+　　　　.input-control .error {
+    　　　　color: #ff3860;
+    　　　　font-size: 1.2rem;
+   　　　　 height: 1.6rem;
+　　　　}
+        
     </style>
 </head>
 
