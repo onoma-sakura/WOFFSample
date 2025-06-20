@@ -217,13 +217,13 @@
             const endTimeField = createInputField('endTime', '終了時間', 'time');
 
             //フォームに追加
-            dateField.insertAdjacentElement('afterend', endTimeField);
-            dateField.insertAdjacentElement('afterend', endDateField);
-            dateField.insertAdjacentElement('afterend', startTimeField);
-            dateField.insertAdjacentElement('afterend', startDateField);
-            dateField.insertAdjacentElement('afterend', subDateField);
             dateField.insertAdjacentElement('afterend', timeField);
-
+            dateField.insertAdjacentElement('afterend', subDateField);
+            dateField.insertAdjacentElement('afterend', startDateField);
+            dateField.insertAdjacentElement('afterend', startTimeField);
+            dateField.insertAdjacentElement('afterend', endDateField);
+            dateField.insertAdjacentElement('afterend', endTimeField);
+            
             //最初非表示
             timeField.style.display = 'none';
             subDateField.style.display = 'none';
