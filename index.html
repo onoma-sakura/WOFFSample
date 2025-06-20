@@ -41,6 +41,14 @@
             margin: 20px auto;
             padding: 10px;
         }
+        .form-title h2 {
+            font-size: 24px;
+            color: #000000c7;
+        }
+       .form-title p {
+           font-size: 18px;
+            color: #000000c7;
+        }
 
         .section {
             background-color: rgba(10, 10, 10, 0.5);
@@ -93,9 +101,9 @@
             margin: 20px 0;
             padding: 15px 30px;
             background-color: transparent;
-            color: #000000;
+            color: #000000c7;
             text-align: center;
-            border: 2px solid #000000;
+            border: 2px solid #000000c7;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s, color 0.3s;
@@ -104,12 +112,12 @@
         }
         .btn:hover {
             background-color: var(--fluorescent-green);
-            color: transparent;
+            color: 000000;
         }
         .form-label {
            color: #536387;
-           font-size: 16px;
-           line-height: 2.4rem;
+           font-size: 18px;
+           line-height: 2rem;
            display: block;
            margin-bottom: 1rem;
        }
@@ -130,14 +138,14 @@
            display: block;
            appearance: none;
            cursor: pointer;
-           width: 100%;
-           padding: 1.5rem 2rem;
+           width: 80%;
+           padding: 1rem 2rem;
            border-radius: .5rem;
            border: .2rem solid #dde3ec;
            background: #ffffff;
            font-weight: 500;
-           font-size: 1.6rem;
-           color: #536387;
+           font-size: 22px;
+           color: #000000c7;
        }
         
     </style>
@@ -165,7 +173,7 @@
             </div>
 
             <div class="mb-3 input-control">
-                <label for="fruits" class="form-label">届出内容</label>
+                <label for="select_reason" class="form-label required">届出内容</label>
                 <select name="fruits" id="fruits" class="form-select">
                     <option name="00">選択してください 。</option>
                     <option name="01">有給休暇（1日）</option>
