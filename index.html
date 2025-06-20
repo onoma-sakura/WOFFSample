@@ -43,52 +43,52 @@
         }
 
         .form-title h2 {
-        margin: 0 0 10px 0;
-        font-size: 20px;
-        color: #000000a1;
-    }
+            margin: 0 0 10px 0;
+            font-size: 20px;
+            color: #000000a1;
+        }
 
-    .form-title p {
-        font-size: 14px;
-        color: #000000a1;
-        margin-bottom: 20px;
-    }
+        .form-title p {
+            font-size: 14px;
+            color: #000000a1;
+            margin-bottom: 20px;
+        }
 
-    .input-control {
-        margin-bottom: 20px;
-        display: flex;
-        flex-direction: column;
-    }
+        .input-control {
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .form-label {
-        font-weight: bold;
-        margin-bottom: 8px;
-        color: #000000a1;
-    }
+        .form-label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #000000a1;
+        }
 
-    .form-input,
-    .form-select {
-        padding: 10px;
-        font-size: 16px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-    }
+        .form-input,
+        .form-select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
 
-    .error {
-        color: red;
-        font-size: 12px;
-        margin-top: 5px;
-    }
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
 
-    .wrapper {
-        background-color: #f6b540a1;
-        border-radius: 10px;
-        padding: 20px;
-        border: 2px solid var(--fluorescent-green);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        margin-bottom: 20px;
-        color: #000000a1;
-    }
+        .wrapper {
+            background-color: #f6b540a1;
+            border-radius: 10px;
+            padding: 20px;
+            border: 2px solid var(--fluorescent-green);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            color: #000000a1;
+        }
 
         .section {
             background-color: #f6b540a1;
@@ -122,7 +122,6 @@
             background-color: #49ddef;
             color: #020b2e;
         }
-
     </style>
 </head>
 
@@ -139,110 +138,51 @@
             <p>woff.getProfile() メソッドでログイン中のユーザーのプロフィール情報を取得して表示しています。</p>
             <div id="userProfileInfo"></div>
         </div>
-    <div class="wrapper">
-    <form action="#">
-        <div class="form-title">
-            <h2>届出書</h2>
-            <p>
-                有給休暇・特別休暇・遅刻・早退・欠勤・代休・自社業務時に報告ください。<br>
-                ※有給休暇取得の報告は1週間以上前に報告をお願いします。
-            </p>
-        </div>
+        <div class="wrapper">
+            <form action="#">
+                <div class="form-title">
+                    <h2>届出書</h2>
+                    <p>
+                        有給休暇・特別休暇・遅刻・早退・欠勤・代休・自社業務時に報告ください。<br>
+                        ※有給休暇取得の報告は1週間以上前に報告をお願いします。
+                    </p>
+                </div>
 
-        <div class="input-control">
-            <label for="fruits" class="form-label">届出内容</label>
-            <select name="fruits" id="fruits" class="form-select">
-                <option value="">選択してください 。</option>
-                <option value="01">有給休暇（1日）</option>
-                <option value="02">有給休暇（半日）</option>
-                <option value="03">特別休暇</option>
-                <option value="04">欠勤（1日）</option>
-                <option value="05">遅刻</option>
-                <option value="06">早退</option>
-                <option value="07">振替休日</option>
-                <option value="08">自社業務</option>
-            </select>
-            <div class="error" id="error-fruits"></div>
-        </div>
+                <div class="input-control">
+                    <label for="select" class="form-label">届出内容</label>
+                    <select name="select" id="select" class="form-select">
+                        <option value="">選択してください 。</option>
+                        <option value="01">有給休暇（1日）</option>
+                        <option value="02">有給休暇（半日）</option>
+                        <option value="03">特別休暇</option>
+                        <option value="04">欠勤（1日）</option>
+                        <option value="05">遅刻</option>
+                        <option value="06">早退</option>
+                        <option value="07">振替休日</option>
+                        <option value="08">自社業務</option>
+                    </select>
+                    <div class="error" id="error-select"></div>
+                </div>
 
-        <div class="input-control">
-            <label for="date" class="form-label">取得日</label>
-            <input type="date" id="date" name="date" class="form-input">
-            <div class="error" id="error-date"></div>
-        </div>
+                <div class="input-control">
+                    <label for="date" class="form-label">取得日</label>
+                    <input type="date" id="date" name="date" class="form-input">
+                    <div class="error" id="error-date"></div>
+                </div>
 
-        <div class="input-control">
-            <label for="reason" class="form-label">事由をご入力ください。<br>
-                （例）私用の為、通院の為など</label>
-            <input type="text" id="reason" name="reason" class="form-input">
-            <div class="error" id="error-reason"></div>
-        </div>
+                <div class="input-control">
+                    <label for="reason" class="form-label">事由をご入力ください。<br>
+                        （例）私用の為、通院の為など</label>
+                    <input type="text" id="reason" name="reason" class="form-input">
+                    <div class="error" id="error-reason"></div>
+                </div>
 
-        <input type="submit" id="SubmitBtn" name="SubmitBtn" value="送信" class="btn">
-    </form>
-</div>
+                <input type="submit" id="SubmitBtn" name="SubmitBtn" value="送信" class="btn">
+            </form>
+        </div>
     </div>
 
     <script>
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition);
-            } else {
-                document.getElementById("locationInfo").innerHTML = "このブラウザはGeolocationをサポートしていません。";
-            }
-        }
-
-        function showPosition(position) {
-            document.getElementById("locationInfo").innerHTML = "Latitude: " + position.coords.latitude +
-                ", Longitude: " + position.coords.longitude;
-            document.getElementById("sendLocationBtn").style.display = "block";
-        }
-
-        function sendLocationToWOFF() {
-            const locationInfoElem = document.getElementById("locationInfo");
-            const messageContent = locationInfoElem.textContent;
-
-            woff.sendMessage({
-                content: messageContent
-            })
-                .then(() => {
-                    alert('Sent successfully');
-                })
-                .catch((err) => {
-                    alert('error: ' + err);
-                });
-        }
-
-        function scanQRCode() {
-            woff.scanQR()
-                .then((result) => {
-                    document.getElementById("qrResult").innerHTML = "Scanned Info: " + result.value;
-                    document.getElementById("sendQRDataBtn").style.display = "block";
-                })
-                .catch((err) => {
-                    alert('error: ' + err);
-                });
-        }
-
-        function sendQRToWOFF() {
-            const qrResultElem = document.getElementById("qrResult");
-            const messageContent = qrResultElem.textContent;
-
-            woff.sendMessage({
-                content: messageContent
-            })
-                .then(() => {
-                    alert('QRコードの情報を送信しました');
-                })
-                .catch((err) => {
-                    alert('error: ' + err);
-                });
-        }
-
-        document.getElementById("exitAppBtn").addEventListener("click", function () {
-            woff.closeWindow();
-        });
-
         window.onload = function () {
             woff
                 .init({
@@ -264,10 +204,87 @@
                     console.log(err.code, err.message);
                 });
 
-            document.getElementById("getLocationBtn").addEventListener("click", getLocation);
-            document.getElementById("sendLocationBtn").addEventListener("click", sendLocationToWOFF);
-            document.getElementById("scanQRBtn").addEventListener("click", scanQRCode);
-            document.getElementById("sendQRDataBtn").addEventListener("click", sendQRToWOFF);
+            const select = document.getElementById('select');
+            const dateField = document.getElementById('date').parentElement;
+            const reasonField = document.getElementById('reason').parentElement;
+
+            //時刻、開始日、終了日フィールドを追加で作成
+            const timeField = createInputField('time', '時間', 'time');
+            const subDateField = createInputField('subDate', '代わりに出勤する日', 'date');
+            const startDateField = createInputField('startDate', '取得日（開始日）', 'date');
+            const endDateField = createInputField('endDate', '取得日（終了日）', 'date');
+
+            //フォームに追加
+            dateField.insertAdjacentElement('afterend', endDateField);
+            dateField.insertAdjacentElement('afterend', startDateField);
+            dateField.insertAdjacentElement('afterend', subDateField);
+            dateField.insertAdjacentElement('afterend', timeField);
+
+            //最初非表示
+            timeField.style.display = 'none';
+            subDateField.style.display = 'none';
+            startDateField.style.display = 'none';
+            endDateField.style.display = 'none';
+
+            //届出内容が変わったら入力欄の表示を切り替える
+            select.addEventListener('change', (e) => {
+                //共通表示
+                dateField.style.display = 'block';
+                reasonField.style.display = 'block';
+                timeField.style.display = 'none';
+                subDateField.style.display = 'none';
+                startDateField.style.display = 'none';
+                endDateField.style.display = 'none';
+
+                switch (value) {
+                    case '01': //有給休暇（1日）
+                    case '03': //特別休暇
+                    case '04': //欠勤（1日）
+                        break;
+
+                    case '02': //有給休暇（半日）
+                    case '05': //遅刻
+                    case '06': //早退
+                        timeField.style.display = 'block';
+
+                    case '07': //振替休日
+                        subDateField.style.display = 'block';
+
+                    case '08': //自社業務
+                        dateField.style.display = 'none';
+                        startDateField.style.display = 'block';
+                        timeField.style.display = 'block';
+                        endDateField.style.display = 'block';
+                        timeField.style.display = 'block';
+
+                    default:
+                        dateField.style.display = 'none';
+                        reasonField.style.display = 'none';
+                }
+            });
+            
+            function createInputField(id, labelText, type = 'text') {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'input-control';
+                wrapper.id = id + 'Control';
+
+                const label = document.createElement('label');
+                label.className = 'form-label';
+                label.setAttribute('for', id);
+                label.innerText = labelText;
+
+                const input = document..createElement('input');
+                input.type = type;
+                input.id = id;
+                input.name = id;
+                input.className = 'form-input';
+
+                wrapper.appendChild(label);
+                wrapper.appendChild(input);
+
+                return wrapper;
+            }
+
         };
     </script>
     <script charset="utf-8" src="https://static.worksmobile.net/static/wm/woff/edge/3.6/sdk.js"></script>
