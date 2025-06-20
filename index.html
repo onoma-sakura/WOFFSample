@@ -21,7 +21,7 @@
             margin: 0;
             padding: 0;
             background: linear-gradient(45deg, #dea435a6, #CB7C2F);
-            color: #e0e0e0;
+            color: 000000;
         }
 
         header {
@@ -41,6 +41,53 @@
             margin: 20px auto;
             padding: 10px;
         }
+
+        .form-title h2 {
+        margin: 0 0 10px 0;
+        font-size: 20px;
+        color: white;
+    }
+
+    .form-title p {
+        font-size: 14px;
+        color: white;
+        margin-bottom: 20px;
+    }
+
+    .input-control {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-label {
+        font-weight: bold;
+        margin-bottom: 8px;
+        color: white;
+    }
+
+    .form-input,
+    .form-select {
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+
+    .error {
+        color: red;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    .wrapper {
+        background-color: rgba(10, 10, 10, 0.5);
+        border-radius: 10px;
+        padding: 20px;
+        border: 2px solid var(--fluorescent-green);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+    }
 
         .section {
             background-color: rgba(10, 10, 10, 0.5);
@@ -74,14 +121,6 @@
             color: #020b2e;
         }
 
-        #sendLocationBtn,
-        #sendQRDataBtn {
-            display: none;
-        }
-
-        #sendQRBtn {
-            display: none;
-        }
     </style>
 </head>
 
@@ -99,43 +138,46 @@
             <div id="userProfileInfo"></div>
         </div>
        <div class="wrapper">
-        <form action="#">
-            <div class="form-title">
-                <h2>届出書</h2>
-                <p>
-                    有給休暇・特別休暇・遅刻・早退・欠勤・代休・自社業務時に報告ください。<br>※有給休暇取得の報告は1週間以上前に報告をお願いします。
-                </p>
-            </div>
-            
-            <div class="mb-3 input-control">
-                <label for="fruits" class="form-label">届出内容</label>
-                <select name="fruits" id="fruits" class="form-select">
-                    <option name="00">選択してください 。</option>
-                    <option name="01">有給休暇（1日）</option>
-                    <option name="02">有給休暇（半日）</option>
-                    <option name="03">特別休暇</option>
-                    <option name="04">欠勤（1日）</option>
-                    <option name="05">遅刻</option>
-                    <option name="06">早退</option>
-                    <option name="07">振替休日</option>
-                    <option name="08">自社業務</option>
-                </select>
-                <div class="error"></div>
-            </div>
-                <div class="input-control">
-                    <label for="date" class="form-label required">取得日</label>
-                    <input type="date" id="date" name="date" value="" class="form-input">
-                    <div class="error"></div>
-                </div>
-                <div class="input-control">
-                    <label for="reason" class="form-label required">事由をご入力ください。（例）私用の為、通院の為など</label>
-                    <input type="text" id="reason" name="reason" value="" class="form-input">
-                    <div class="error"></div>
-                </div>
-            
-            <input type="submit" id="SubmitBtn" name="SubmitBtn" value="送信" class="btn">
-        </form>
-    </div>
+    <form action="#">
+        <div class="form-title">
+            <h2>届出書</h2>
+            <p>
+                有給休暇・特別休暇・遅刻・早退・欠勤・代休・自社業務時に報告ください。<br>
+                ※有給休暇取得の報告は1週間以上前に報告をお願いします。
+            </p>
+        </div>
+
+        <div class="input-control">
+            <label for="fruits" class="form-label">届出内容</label>
+            <select name="fruits" id="fruits" class="form-select">
+                <option value="">選択してください 。</option>
+                <option value="01">有給休暇（1日）</option>
+                <option value="02">有給休暇（半日）</option>
+                <option value="03">特別休暇</option>
+                <option value="04">欠勤（1日）</option>
+                <option value="05">遅刻</option>
+                <option value="06">早退</option>
+                <option value="07">振替休日</option>
+                <option value="08">自社業務</option>
+            </select>
+            <div class="error" id="error-fruits"></div>
+        </div>
+
+        <div class="input-control">
+            <label for="date" class="form-label">取得日</label>
+            <input type="date" id="date" name="date" class="form-input">
+            <div class="error" id="error-date"></div>
+        </div>
+
+        <div class="input-control">
+            <label for="reason" class="form-label">事由をご入力ください。（例）私用の為、通院の為など</label>
+            <input type="text" id="reason" name="reason" class="form-input">
+            <div class="error" id="error-reason"></div>
+        </div>
+
+        <input type="submit" id="SubmitBtn" name="SubmitBtn" value="送信" class="btn">
+    </form>
+</div>
     </div>
 
     <script>
