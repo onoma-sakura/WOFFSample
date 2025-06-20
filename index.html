@@ -211,10 +211,10 @@
             //時刻、開始日、終了日フィールドを追加で作成
             const timeField = createInputField('time', '時間', 'time');
             const subDateField = createInputField('subDate', '代わりに出勤する日', 'date');
-            const startDateField = createInputField('startDate', '取得日（開始日）', 'date');
-            const startTimeField = createInputField('startTime', '時間', 'time');
-            const endDateField = createInputField('endDate', '取得日（終了日）', 'date');
-            const endTimeField = createInputField('endTime', '時間', 'time');
+            const startDateField = createInputField('startDate', '取得日', 'date');
+            const startTimeField = createInputField('startTime', '開始時間', 'time');
+            const endDateField = createInputField('endDate', '取得日', 'date');
+            const endTimeField = createInputField('endTime', '終了時間', 'time');
 
             //フォームに追加
             dateField.insertAdjacentElement('afterend', endTimeField);
