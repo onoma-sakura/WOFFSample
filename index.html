@@ -68,14 +68,14 @@
    　　　　 margin-bottom: 1rem;
 　　　　}
         
-        label.required:after {
+        .required::after {
  　　　　   margin-left: 1rem;
   　　　　  padding: 0 .5rem;
   　　　　  border-radius: .5rem;
   　　　　  font-size: 1.1rem;
   　　　　  color: white;
   　　　　  background-color: #ff3860;
-   　　　　 content: "必須";
+   　　　　 content: "*必須";
 　　　　}
 
         .wrapper {
@@ -174,7 +174,7 @@
             </div>
 
             <div class="mb-3 input-control">
-                <label for="select_reason" class="form-label.required">届出内容</label>
+                <label for="select_reason" class="form-label required">届出内容</label>
                 <select name="fruits" id="fruits" class="form-select">
                     <option name="00">選択してください 。</option>
                     <option name="01">有給休暇（1日）</option>
@@ -190,7 +190,7 @@
             </div>
             <div class="input-flex">
                 <div class="input-control">
-                    <label for="BirthDate" class="form-label.required">取得日</label>
+                    <label for="BirthDate" class="form-label required">取得日</label>
                     <input type="date" id="BirthDate" name="BirthDate" value="" class="form-input">
                     <div class="error"></div>
                 </div>
