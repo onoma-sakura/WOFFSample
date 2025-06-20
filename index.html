@@ -170,18 +170,11 @@
                     <div class="error" id="error-date"></div>
                 </div>
 
-                <div class="input-control">
-                    <label for="reason" class="form-label">事由をご入力ください。<br>
-                        （例）私用の為、通院の為など</label>
-                    <input type="text" id="reason" name="reason" class="form-input">
-                    <div class="error" id="error-reason"></div>
-                </div>
-
-                <div class="input-control" id="timeControl" style="display: none;">
+                 <div class="input-control" id="timeControl" style="display: none;">
                     <label for="time" class="form-label">時間</label>
                     <input type="time" id="time" name="time" class="form-input">
                 </div>
-
+                
                 <div class="input-control" id="subDateControl" style="display: none;">
                     <label for="subDate" class="form-label">代わりに出勤する日</label>
                     <input type="date" id="subDate" name="subDate" class="form-input">
@@ -205,6 +198,13 @@
                 <div class="input-control" id="endTimeControl" style="display: none;">
                     <label for="endTime" class="form-label">終了時間</label>
                     <input type="time" id="endTime" name="endTime" class="form-input">
+                </div>
+
+                <div class="input-control">
+                    <label for="reason" class="form-label">事由をご入力ください。<br>
+                        （例）私用の為、通院の為など</label>
+                    <input type="text" id="reason" name="reason" class="form-input">
+                    <div class="error" id="error-reason"></div>
                 </div>
 
                 <input type="submit" id="SubmitBtn" name="SubmitBtn" value="送信" class="btn">
@@ -250,8 +250,8 @@
             select.addEventListener('change', (e) => {
                 const value = e.target.value;
                 //共通表示
-                dateField.style.display = 'none';
-                reasonField.style.display = 'none';
+                dateField.style.display = 'block';
+                reasonField.style.display = 'block';
                 timeField.style.display = 'none';
                 subDateField.style.display = 'none';
                 startDateField.style.display = 'none';
@@ -263,22 +263,16 @@
                     case '01': //有給休暇（1日）
                     case '03': //特別休暇
                     case '04': //欠勤（1日）
-                        dateField.style.display = 'block';
-                        reasonField.style.display = 'block';
                         break;
 
                     case '02': //有給休暇（半日）
                     case '05': //遅刻
                     case '06': //早退
-                        dateField.style.display = 'block';
                         timeField.style.display = 'block';
-                        reasonField.style.display = 'block';
                         break;
 
                     case '07': //振替休日
-                        dateField.style.display = 'block';
                         subDateField.style.display = 'block';
-                        reasonField.style.display = 'block';
                         break;
 
                     case '08': //自社業務
@@ -287,7 +281,6 @@
                         startTimeField.style.display = 'block';
                         endDateField.style.display = 'block';
                         endTimeField.style.display = 'block';
-                        reasonField.style.display = 'block';
                         break;
 
                     default:
