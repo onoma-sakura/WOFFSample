@@ -212,10 +212,14 @@
             const timeField = createInputField('time', '時間', 'time');
             const subDateField = createInputField('subDate', '代わりに出勤する日', 'date');
             const startDateField = createInputField('startDate', '取得日（開始日）', 'date');
+            const startTimeField = createInputField('startTime', '時間', 'time');
             const endDateField = createInputField('endDate', '取得日（終了日）', 'date');
+            const endTimeField = createInputField('endTime', '時間', 'time');
 
             //フォームに追加
+            dateField.insertAdjacentElement('afterend', endTimeField);
             dateField.insertAdjacentElement('afterend', endDateField);
+            dateField.insertAdjacentElement('afterend', startTimeField);
             dateField.insertAdjacentElement('afterend', startDateField);
             dateField.insertAdjacentElement('afterend', subDateField);
             dateField.insertAdjacentElement('afterend', timeField);
@@ -224,7 +228,9 @@
             timeField.style.display = 'none';
             subDateField.style.display = 'none';
             startDateField.style.display = 'none';
+            startTimeField.style.display = 'none';
             endDateField.style.display = 'none';
+            endTimeField.style.display = 'none';
 
             //届出内容が変わったら入力欄の表示を切り替える
             select.addEventListener('change', (e) => {
@@ -235,7 +241,9 @@
                 timeField.style.display = 'none';
                 subDateField.style.display = 'none';
                 startDateField.style.display = 'none';
+                startTimeField.style.display = 'none';
                 endDateField.style.display = 'none';
+                endTimeField.style.display = 'none';
 
                 switch (value) {
                     case '01': //有給休暇（1日）
@@ -256,9 +264,9 @@
                     case '08': //自社業務
                         dateField.style.display = 'none';
                         startDateField.style.display = 'block';
-                        timeField.style.display = 'block';
+                        startTimeField.style.display = 'block';
                         endDateField.style.display = 'block';
-                        timeField.style.display = 'block';
+                        endTimeField.style.display = 'block';
                         break;
 
                     default:
