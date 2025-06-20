@@ -228,6 +228,7 @@
 
             //届出内容が変わったら入力欄の表示を切り替える
             select.addEventListener('change', (e) => {
+                const value = e.target.value;
                 //共通表示
                 dateField.style.display = 'block';
                 reasonField.style.display = 'block';
@@ -246,9 +247,11 @@
                     case '05': //遅刻
                     case '06': //早退
                         timeField.style.display = 'block';
+                        break;
 
                     case '07': //振替休日
                         subDateField.style.display = 'block';
+                        break;
 
                     case '08': //自社業務
                         dateField.style.display = 'none';
@@ -256,10 +259,12 @@
                         timeField.style.display = 'block';
                         endDateField.style.display = 'block';
                         timeField.style.display = 'block';
+                        break;
 
                     default:
                         dateField.style.display = 'none';
                         reasonField.style.display = 'none';
+                        break;
                 }
             });
             
@@ -273,7 +278,7 @@
                 label.setAttribute('for', id);
                 label.innerText = labelText;
 
-                const input = document..createElement('input');
+                const input = document.createElement('input');
                 input.type = type;
                 input.id = id;
                 input.name = id;
