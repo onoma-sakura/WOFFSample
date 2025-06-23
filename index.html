@@ -236,61 +236,62 @@
                     console.log(err.code, err.message);
                 });
 
-            const select = document.getElementById('select');
-            const dateField = document.getElementById('date').parentElement;
-            const reasonField = document.getElementById('reason').parentElement;
-            const timeField = document.getElementById('timeControl');
-            const subDateField = document.getElementById('subDateControl');
-            const startDateField = document.getElementById('startDateControl');
-            const startTimeField = document.getElementById('startTimeControl');
-            const endDateField = document.getElementById('endDateControl');
-            const endTimeField = document.getElementById('endTimeControl');
+            document.getElementById("myForm").addEventListener("SubmitBtn", function (event) {
+                const select = document.getElementById('select');
+                const dateField = document.getElementById('date').parentElement;
+                const reasonField = document.getElementById('reason').parentElement;
+                const timeField = document.getElementById('timeControl');
+                const subDateField = document.getElementById('subDateControl');
+                const startDateField = document.getElementById('startDateControl');
+                const startTimeField = document.getElementById('startTimeControl');
+                const endDateField = document.getElementById('endDateControl');
+                const endTimeField = document.getElementById('endTimeControl');
+                const button = document.getElementById('SubmitBtn');
 
 
-            //届出内容が変わったら入力欄の表示を切り替える
-            select.addEventListener('change', (e) => {
-                const value = e.target.value;
-                //共通表示
-                dateField.style.display = 'block';
-                reasonField.style.display = 'block';
-                timeField.style.display = 'none';
-                subDateField.style.display = 'none';
-                startDateField.style.display = 'none';
-                startTimeField.style.display = 'none';
-                endDateField.style.display = 'none';
-                endTimeField.style.display = 'none';
+                //届出内容が変わったら入力欄の表示を切り替える
+                select.addEventListener('change', (e) => {
+                    const value = e.target.value;
+                    //共通表示
+                    dateField.style.display = 'block';
+                    reasonField.style.display = 'block';
+                    timeField.style.display = 'none';
+                    subDateField.style.display = 'none';
+                    startDateField.style.display = 'none';
+                    startTimeField.style.display = 'none';
+                    endDateField.style.display = 'none';
+                    endTimeField.style.display = 'none';
 
-                switch (value) {
-                    case '01': //有給休暇（1日）
-                    case '03': //特別休暇
-                    case '04': //欠勤（1日）
-                        break;
+                    switch (value) {
+                        case '01': //有給休暇（1日）
+                        case '03': //特別休暇
+                        case '04': //欠勤（1日）
+                            break;
 
-                    case '02': //有給休暇（半日）
-                    case '05': //遅刻
-                    case '06': //早退
-                        timeField.style.display = 'block';
-                        break;
+                        case '02': //有給休暇（半日）
+                        case '05': //遅刻
+                        case '06': //早退
+                            timeField.style.display = 'block';
+                            break;
 
-                    case '07': //振替休日
-                        subDateField.style.display = 'block';
-                        break;
+                        case '07': //振替休日
+                            subDateField.style.display = 'block';
+                            break;
 
-                    case '08': //自社業務
-                        dateField.style.display = 'none';
-                        startDateField.style.display = 'block';
-                        startTimeField.style.display = 'block';
-                        endDateField.style.display = 'block';
-                        endTimeField.style.display = 'block';
-                        break;
+                        case '08': //自社業務
+                            dateField.style.display = 'none';
+                            startDateField.style.display = 'block';
+                            startTimeField.style.display = 'block';
+                            endDateField.style.display = 'block';
+                            endTimeField.style.display = 'block';
+                            break;
 
-                    default:
-                        dateField.style.display = 'none';
-                        reasonField.style.display = 'none';
-                        break;
-                }
+                        default:
+                            dateField.style.display = 'none';
+                            reasonField.style.display = 'none';
+                            break;
+                    }
 
-                document.getElementById("myForm").addEventListener("SubmitBtn", function (event) {
                     if (!reasonField) {
                         document.getElementById("errorMessage").textContent = "このフィールドは必須です。";
                         e.preventDefault();
