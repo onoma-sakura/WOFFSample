@@ -260,6 +260,7 @@
                     startTimeField.style.display = 'none';
                     endDateField.style.display = 'none';
                     endTimeField.style.display = 'none';
+                    const errorDate = document.getElementById('error-date');
 
                     switch (value) {
                         case '01': //有給休暇（1日）
@@ -271,7 +272,6 @@
                         case '05': //遅刻
                         case '06': //早退
                             timeField.style.display = 'block';
-                            
                             break;
 
                         case '07': //振替休日
@@ -290,6 +290,13 @@
                             dateField.style.display = 'none';
                             reasonField.style.display = 'none';
                             break;
+                    }
+
+                    if(!dateField.value.trim()){
+                        e.preventDefault();
+                        errorDate.textContent = '入力して';
+                    } else {
+                        errorDate.textContent = '';
                     }
 
 
