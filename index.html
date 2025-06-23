@@ -166,7 +166,7 @@
 
                 <div class="input-control">
                     <label for="date" class="form-label">取得日</label>
-                    <input type="date" id="date" name="date" class="form-input">
+                    <input type="date" id="date" name="date" class="form-input" required>
                     <div class="error" id="error-date"></div>
                 </div>
 
@@ -291,15 +291,6 @@
                             break;
                     }
 
-                    document.getElementById('myForm').addEventListener('SubmitBtn', function (event) {
-                        let selectedValue = document.getElementById('select').value;
-                    if (!selectedValue) {
-                        document.getElementById('errorMessage').textContent = "このフィールドは必須です。";
-                        e.preventDefault();
-                    } else {
-                        document.getElementById('errorMessage').textContent = "";
-                    }
-                })
 
             });
         };
