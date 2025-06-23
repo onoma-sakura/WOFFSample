@@ -139,7 +139,7 @@
             <div id="userProfileInfo"></div>
         </div>
         <div class="wrapper">
-            <form action="#">
+            <form action="#" id="myForm">
                 <div class="form-title">
                     <h2>届出書</h2>
                     <p>
@@ -170,11 +170,11 @@
                     <div class="error" id="error-date"></div>
                 </div>
 
-                 <div class="input-control" id="timeControl" style="display: none;">
+                <div class="input-control" id="timeControl" style="display: none;">
                     <label for="time" class="form-label">時間</label>
                     <input type="time" id="time" name="time" class="form-input">
                 </div>
-                
+
                 <div class="input-control" id="subDateControl" style="display: none;">
                     <label for="subDate" class="form-label">代わりに出勤する日</label>
                     <input type="date" id="subDate" name="subDate" class="form-input">
@@ -209,6 +209,8 @@
 
                 <button id="SubmitBtn">ボタン</button>
             </form>
+            <div id="errorMessage" style="color: red"></div>
+
         </div>
     </div>
 
@@ -244,12 +246,6 @@
             const endDateField = document.getElementById('endDateControl');
             const endTimeField = document.getElementById('endTimeControl');
             const button = document.getElementById('SubmitBtn');
-
-            button.addEventListener('click', pushButton);
-
-            function pushButton() {
-                alert('クリックされた');
-            }
 
 
             //届出内容が変わったら入力欄の表示を切り替える
@@ -294,6 +290,16 @@
                         reasonField.style.display = 'none';
                         break;
                 }
+
+                document.getElementById("myForm").addEventListener("SubmitBtn", function (event) {
+                    if (!reasonField) {
+                        document.getElementById("errorMessage").textContent = "このフィールドは必須です。";
+                        e.preventDefault();
+                    } else {
+                        document.getElementById("errorMessage").textContent = "";
+                    }
+                })
+
             });
         };
     </script>
