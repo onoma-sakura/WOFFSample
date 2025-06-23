@@ -291,13 +291,14 @@
                             break;
                     }
 
-                    if (!reasonField) {
+                    
+                })
+                if (!reasonField) {
                         document.getElementById('errorMessage').textContent = "このフィールドは必須です。";
                         e.preventDefault();
                     } else {
                         document.getElementById('errorMessage').textContent = "";
                     }
-                })
 
             });
         };
