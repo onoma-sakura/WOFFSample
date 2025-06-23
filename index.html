@@ -166,7 +166,7 @@
 
                 <div class="input-control">
                     <label for="date" class="form-label">取得日</label>
-                    <input type="date" id="date" name="date" class="form-input" required>
+                    <input type="date" id="date" name="date" class="form-input">
                     <div class="error" id="error-date"></div>
                 </div>
 
@@ -247,9 +247,14 @@
             const endDateField = document.getElementById('endDateControl');
             const endTimeField = document.getElementById('endTimeControl');
 
+            const date = document.getElementById('date');
             const time = document.getElementById('time');
-            
-           
+            const subDate = document.getElementById('subDate');
+            const startDate = document.getElementById('startDate');
+            const startTime = document.getElementById('startTime');
+            const endDate = document.getElementById('endDate');
+            const endTime = document.getElementById('endTime');
+
 
             //届出内容が変わったら入力欄の表示を切り替える
             select.addEventListener('change', (e) => {
@@ -265,11 +270,12 @@
                 endTimeField.style.display = 'none';
 
 
-        
+
                 switch (value) {
                     case '01': //有給休暇（1日）
                     case '03': //特別休暇
                     case '04': //欠勤（1日）
+                        date.required = true;
                         break;
 
                     case '02': //有給休暇（半日）
@@ -277,11 +283,13 @@
                     case '06': //早退
                         timeField.style.display = 'block';
                         time.required = true;
-                        //timeField.setAttribute('required', "");
+                        date.required = true;
                         break;
 
                     case '07': //振替休日
                         subDateField.style.display = 'block';
+                        subDate.required = true;
+                        date.required = true;
                         break;
 
                     case '08': //自社業務
@@ -290,6 +298,11 @@
                         startTimeField.style.display = 'block';
                         endDateField.style.display = 'block';
                         endTimeField.style.display = 'block';
+                        startDate.required = true;
+                        startTime.required = true;
+                        endDate.required = true;
+                        endTime.required = true;
+                        date.required = true;
                         break;
 
                     default:
