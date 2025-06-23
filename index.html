@@ -150,7 +150,7 @@
 
                 <div class="input-control">
                     <label for="select" class="form-label">届出内容</label>
-                    <select name="select" id="select" class="form-select">
+                    <select name="select" id="select" class="form-select" required>
                         <option value="">選択してください 。</option>
                         <option value="01">有給休暇（1日）</option>
                         <option value="02">有給休暇（半日）</option>
@@ -172,38 +172,38 @@
 
                 <div class="input-control" id="timeControl" style="display: none;">
                     <label for="time" class="form-label">時間</label>
-                    <input type="time" id="time" name="time" class="form-input">
+                    <input type="time" id="time" name="time" class="form-input" required>
                 </div>
 
                 <div class="input-control" id="subDateControl" style="display: none;">
                     <label for="subDate" class="form-label">代わりに出勤する日</label>
-                    <input type="date" id="subDate" name="subDate" class="form-input">
+                    <input type="date" id="subDate" name="subDate" class="form-input" required>
                 </div>
 
                 <div class="input-control" id="startDateControl" style="display: none;">
                     <label for="startDate" class="form-label">取得日</label>
-                    <input type="date" id="startDate" name="startDate" class="form-input">
+                    <input type="date" id="startDate" name="startDate" class="form-input" required>
                 </div>
 
                 <div class="input-control" id="startTimeControl" style="display: none;">
                     <label for="startTime" class="form-label">開始時間</label>
-                    <input type="time" id="startTime" name="startTime" class="form-input">
+                    <input type="time" id="startTime" name="startTime" class="form-input" required>
                 </div>
 
                 <div class="input-control" id="endDateControl" style="display: none;">
                     <label for="endDate" class="form-label">取得日</label>
-                    <input type="date" id="endDate" name="endDate" class="form-input">
+                    <input type="date" id="endDate" name="endDate" class="form-input" required>
                 </div>
 
                 <div class="input-control" id="endTimeControl" style="display: none;">
                     <label for="endTime" class="form-label">終了時間</label>
-                    <input type="time" id="endTime" name="endTime" class="form-input">
+                    <input type="time" id="endTime" name="endTime" class="form-input" required>
                 </div>
 
                 <div class="input-control">
                     <label for="reason" class="form-label">事由をご入力ください。<br>
                         （例）私用の為、通院の為など</label>
-                    <input type="text" id="reason" name="reason" class="form-input">
+                    <input type="text" id="reason" name="reason" class="form-input" required>
                     <div class="error" id="error-reason"></div>
                 </div>
 
