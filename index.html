@@ -246,7 +246,7 @@
             const startTimeField = document.getElementById('startTimeControl');
             const endDateField = document.getElementById('endDateControl');
             const endTimeField = document.getElementById('endTimeControl');
-            
+
 
 
             //届出内容が変わったら入力欄の表示を切り替える
@@ -267,12 +267,16 @@
                     case '01': //有給休暇（1日）
                     case '03': //特別休暇
                     case '04': //欠勤（1日）
+
                         break;
 
                     case '02': //有給休暇（半日）
                     case '05': //遅刻
                     case '06': //早退
                         timeField.style.display = 'block';
+                        if (!(document.getElementById('date').value)) {
+                            alert('入力して');
+                        }
                         break;
 
                     case '07': //振替休日
@@ -295,11 +299,9 @@
 
 
             });
-            if(!(document.getElementById('date').value)){
-                    alert('入力して');
-                }
 
-            
+
+
         };
     </script>
     <script charset="utf-8" src="https://static.worksmobile.net/static/wm/woff/edge/3.6/sdk.js"></script>
