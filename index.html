@@ -150,7 +150,7 @@
 
                 <div class="input-control">
                     <label for="select" class="form-label">届出内容</label>
-                    <select name="select" id="select" class="form-select">
+                    <select name="select" id="select" class="form-select" required>
                         <option value="">選択してください 。</option>
                         <option value="01">有給休暇（1日）</option>
                         <option value="02">有給休暇（半日）</option>
@@ -166,7 +166,7 @@
 
                 <div class="input-control">
                     <label for="date" class="form-label">取得日</label>
-                    <input type="date" id="date" name="date" class="form-input">
+                    <input type="date" id="date" name="date" class="form-input" required>
                     <div class="error" id="error-date"></div>
                 </div>
 
@@ -262,12 +262,12 @@
                 endDateField.style.display = 'none';
                 endTimeField.style.display = 'none';
 
+
         
                 switch (value) {
                     case '01': //有給休暇（1日）
                     case '03': //特別休暇
                     case '04': //欠勤（1日）
-
                         break;
 
                     case '02': //有給休暇（半日）
@@ -275,7 +275,6 @@
                     case '06': //早退
                         timeField.style.display = 'block';
                         timeField.required = true;
-
                         break;
 
                     case '07': //振替休日
