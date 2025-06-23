@@ -262,9 +262,7 @@
                 endDateField.style.display = 'none';
                 endTimeField.style.display = 'none';
 
-                timeField.required = false;
-
-
+        
                 switch (value) {
                     case '01': //有給休暇（1日）
                     case '03': //特別休暇
@@ -276,6 +274,7 @@
                     case '05': //遅刻
                     case '06': //早退
                         timeField.style.display = 'block';
+                        timeField.required = ture;
 
                         break;
 
