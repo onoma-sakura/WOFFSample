@@ -276,6 +276,11 @@
                     case '03': //特別休暇
                     case '04': //欠勤（1日）
                         date.required = true;
+                        time.required = false;
+                        startDate.required = false;
+                        startTime.required = false;
+                        endDate.required = false;
+                        endTime.required = false;
                         break;
 
                     case '02': //有給休暇（半日）
@@ -284,12 +289,20 @@
                         timeField.style.display = 'block';
                         time.required = true;
                         date.required = true;
+                        startDate.required = false;
+                        startTime.required = false;
+                        endDate.required = false;
+                        endTime.required = false;
                         break;
 
                     case '07': //振替休日
                         subDateField.style.display = 'block';
                         subDate.required = true;
                         date.required = true;
+                        startDate.required = false;
+                        startTime.required = false;
+                        endDate.required = false;
+                        endTime.required = false;
                         break;
 
                     case '08': //自社業務
@@ -302,7 +315,8 @@
                         startTime.required = true;
                         endDate.required = true;
                         endTime.required = true;
-                        date.required = true;
+                        date.required = false;
+                        time.required = false;
                         break;
 
                     default:
