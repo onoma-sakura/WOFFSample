@@ -207,7 +207,7 @@
                     <div class="error" id="error-reason"></div>
                 </div>
 
-                <button id="SubmitBtn" name="SubmitBtn" value="送信" class="btn" onclick="buttonClick()"></button>
+                <button id="SubmitBtn">ボタン</button>
             </form>
         </div>
     </div>
@@ -243,11 +243,13 @@
             const startTimeField = document.getElementById('startTimeControl');
             const endDateField = document.getElementById('endDateControl');
             const endTimeField = document.getElementById('endTimeControl');
-            const buttonClick = document.getElementById('SubmitBtn');
+            const button = document.getElementById('SubmitBtn');
 
-            buttonClick.addEventListener('click',() => {
-                alert("クリックされました");
-            });
+            button.addEventListener('click', pushButton);
+
+            function pushButton() {
+                alert('クリックされた');
+            }
 
 
             //届出内容が変わったら入力欄の表示を切り替える
