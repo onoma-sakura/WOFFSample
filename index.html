@@ -243,7 +243,11 @@
             const startTimeField = document.getElementById('startTimeControl');
             const endDateField = document.getElementById('endDateControl');
             const endTimeField = document.getElementById('endTimeControl');
+            const buttonClick = document.getElementById('SubmitBtn');
 
+            buttonClick.addEventListener('click',() => {
+                alert("クリックされました");
+            });
 
 
             //届出内容が変わったら入力欄の表示を切り替える
@@ -289,13 +293,6 @@
                         break;
                 }
             });
-
-            function buttonClick(){
-                alert('Click')
-            }
-            let button = document.getElementById('btn');
-            button.addEventListener('click', butotnClick);
-
         };
     </script>
     <script charset="utf-8" src="https://static.worksmobile.net/static/wm/woff/edge/3.6/sdk.js"></script>
