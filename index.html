@@ -295,7 +295,7 @@
                 document.getElementById('myForm').addEventListener('submit', function (event) {
                     const errorDate = document.getElementById('error-date');
                     if (!dateField.value.trim()) {
-                        e.preventDefault();
+                        event.preventDefault();
                         errorDate.textContent = '入力して';
                     } else {
                         errorDate.textContent = '';
