@@ -246,6 +246,7 @@
             const startTimeField = document.getElementById('startTimeControl');
             const endDateField = document.getElementById('endDateControl');
             const endTimeField = document.getElementById('endTimeControl');
+            
 
 
             //届出内容が変わったら入力欄の表示を切り替える
@@ -292,11 +293,11 @@
                         break;
                 }
 
-                if(!(document.getElementById('date').value)){
-                    alert('入力して');
-                }
 
             });
+            if(!(document.getElementById('date').value)){
+                    alert('入力して');
+                }
 
             
         };
