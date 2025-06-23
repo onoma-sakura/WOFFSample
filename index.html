@@ -292,11 +292,13 @@
                         break;
                 }
 
+                if(!(document.getElementById('date').value)){
+                    alert('入力して');
+                }
+
             });
 
-            if(!(dateField.value)){
-                alert('入力して');
-            }
+            
         };
     </script>
     <script charset="utf-8" src="https://static.worksmobile.net/static/wm/woff/edge/3.6/sdk.js"></script>
