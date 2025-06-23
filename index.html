@@ -236,7 +236,7 @@
                     console.log(err.code, err.message);
                 });
 
-            document.getElementById('myForm').addEventListener('SubmitBtn', function (event) {
+            
                 const select = document.getElementById('select');
                 const dateField = document.getElementById('date').parentElement;
                 const reasonField = document.getElementById('reason').parentElement;
@@ -291,14 +291,15 @@
                             break;
                     }
 
-                    
-                })
-                if (!reasonField) {
+                    document.getElementById('myForm').addEventListener('SubmitBtn', function (event) {
+                        let selectedValue = document.getElementById('select').value;
+                    if (!selectedValue) {
                         document.getElementById('errorMessage').textContent = "このフィールドは必須です。";
                         e.preventDefault();
                     } else {
                         document.getElementById('errorMessage').textContent = "";
                     }
+                })
 
             });
         };
