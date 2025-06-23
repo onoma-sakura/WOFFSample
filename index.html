@@ -203,7 +203,7 @@
                 <div class="input-control">
                     <label for="reason" class="form-label">事由をご入力ください。<br>
                         （例）私用の為、通院の為など</label>
-                    <input type="text" id="reason" name="reason" class="form-input" required>
+                    <input type="text" id="reason" name="reason" class="form-input">
                     <div class="error" id="error-reason"></div>
                 </div>
 
@@ -254,6 +254,7 @@
             const startTime = document.getElementById('startTime');
             const endDate = document.getElementById('endDate');
             const endTime = document.getElementById('endTime');
+            const reason = document.getElementById('reason');
 
 
             //届出内容が変わったら入力欄の表示を切り替える
@@ -276,6 +277,7 @@
                     case '03': //特別休暇
                     case '04': //欠勤（1日）
                         date.required = true;
+                        reason.required = true;
                         time.required = false;
                         startDate.required = false;
                         startTime.required = false;
@@ -289,6 +291,7 @@
                         timeField.style.display = 'block';
                         time.required = true;
                         date.required = true;
+                        reason.required = true;
                         startDate.required = false;
                         startTime.required = false;
                         endDate.required = false;
@@ -299,6 +302,7 @@
                         subDateField.style.display = 'block';
                         subDate.required = true;
                         date.required = true;
+                        reason.required = true;
                         startDate.required = false;
                         startTime.required = false;
                         endDate.required = false;
@@ -315,6 +319,7 @@
                         startTime.required = true;
                         endDate.required = true;
                         endTime.required = true;
+                        reason.required = true;
                         date.required = false;
                         time.required = false;
                         break;
@@ -322,6 +327,13 @@
                     default:
                         dateField.style.display = 'none';
                         reasonField.style.display = 'none';
+                        startDate.required = false;
+                        startTime.required = false;
+                        endDate.required = false;
+                        endTime.required = false;
+                        reason.required = false;
+                        date.required = false;
+                        time.required = false;
                         break;
                 }
 
