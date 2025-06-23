@@ -262,6 +262,8 @@
                 endDateField.style.display = 'none';
                 endTimeField.style.display = 'none';
 
+                timeField.required = true;
+
 
                 switch (value) {
                     case '01': //有給休暇（1日）
@@ -274,7 +276,6 @@
                     case '05': //遅刻
                     case '06': //早退
                         timeField.style.display = 'block';
-                        timeField.required = true;
 
                         break;
 
