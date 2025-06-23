@@ -215,11 +215,6 @@
     </div>
 
     <script>
-        let profile = `
-                    ドメイン ID: ${profile.domainId} <br>
-                    ユーザー ID: ${profile.userId} <br>
-                    ユーザー名: ${profile.displayName}
-                `;
         window.onload = function () {
             woff
                 .init({
@@ -228,7 +223,11 @@
                 .then(() => {
                     woff.getProfile().then(profile => {
                         const profileInfoElem = document.getElementById("userProfileInfo");
-                        profileInfoElem.innerHTML = profile;
+                        profileInfoElem.innerHTML = `
+                    ドメイン ID: ${profile.domainId} <br>
+                    ユーザー ID: ${profile.userId} <br>
+                    ユーザー名: ${profile.displayName}
+                `;
                     }).catch(error => {
                         console.error('Profile error:', error);
                         woff.login();
@@ -239,7 +238,11 @@
                             .then(() => {
                                 woff.getProfile().then(profile => {
                                     const profileInfoElem = document.getElementById("userProfileInfo");
-                                    profileInfoElem.innerHTML = profile;
+                                    profileInfoElem.innerHTML = `
+                    ドメイン ID: ${profile.domainId} <br>
+                    ユーザー ID: ${profile.userId} <br>
+                    ユーザー名: ${profile.displayName}
+                `;
                                 }).catch(error => {
                                     console.error('Profile error:', error);
                                 })
