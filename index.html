@@ -139,7 +139,7 @@
             <div id="userProfileInfo"></div>
         </div>
         <div class="wrapper">
-            <form id="myForm" action="#">
+            <form id="myForm" action="#" onsubmit="return submitConfirm()">
                 <div class="form-title">
                     <h2>届出書</h2>
                     <p>
@@ -274,9 +274,7 @@
                     case '05': //遅刻
                     case '06': //早退
                         timeField.style.display = 'block';
-                        if (!(document.getElementById('date').value)) {
-                            alert('入力して');
-                        }
+
                         break;
 
                     case '07': //振替休日
@@ -300,6 +298,11 @@
 
             });
 
+            function submitConfirm() {
+                if (!(document.getElementById('date').value)) {
+                    alert('入力して');
+                }
+            }
 
 
         };
