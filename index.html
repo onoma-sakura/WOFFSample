@@ -292,15 +292,15 @@
                         break;
                 }
 
-                document.getElementById('myForm').addEventListener('submit', function (event) {
-                    const errorDate = document.getElementById('error-date');
-                    if (!dateField.value.trim()) {
-                        event.preventDefault();
-                        errorDate.textContent = '入力して';
-                    } else {
-                        errorDate.textContent = '';
+                function checkForm() {
+                    var inputName = document.getElementById('dateField');
+                    if (inputName.value === "") {
+                        alert("名前が未入力です。");
+                        return false;
                     }
-                });
+                    return true;
+                }
+
 
             });
         };
