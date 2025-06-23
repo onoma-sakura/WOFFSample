@@ -261,10 +261,6 @@
                     endDateField.style.display = 'none';
                     endTimeField.style.display = 'none';
 
-                    select.setAttribute('required');
-                    dateField.setAttribute('required');
-                    reasonField.setAttribute('required');
-
                     switch (value) {
                         case '01': //有給休暇（1日）
                         case '03': //特別休暇
@@ -275,32 +271,23 @@
                         case '05': //遅刻
                         case '06': //早退
                             timeField.style.display = 'block';
-                            timeField.checkValidity;
                             break;
 
                         case '07': //振替休日
                             subDateField.style.display = 'block';
-                            subDateField.setAttribute('required');
                             break;
 
                         case '08': //自社業務
                             dateField.style.display = 'none';
-                            dateField.removeAttribute('required');
                             startDateField.style.display = 'block';
-                            startDateField.setAttribute('required')
                             startTimeField.style.display = 'block';
-                            startTimeField.setAttribute('required');
                             endDateField.style.display = 'block';
-                            endDateField.setAttribute('required');
                             endTimeField.style.display = 'block';
-                            endTimeField.setAttribute('required');
                             break;
 
                         default:
                             dateField.style.display = 'none';
-                            dateField.removeAttribute('required');
                             reasonField.style.display = 'none';
-                            reasonField.removeAttribute('required');
                             break;
                     }
 
