@@ -208,8 +208,9 @@
                 </div>
 
                 <button id="SubmitBtn">ボタン</button>
+                <div id="errorMessage" style="color: red"></div>
             </form>
-            <div id="errorMessage" style="color: red"></div>
+            
 
         </div>
     </div>
@@ -246,6 +247,14 @@
                 const startTimeField = document.getElementById('startTimeControl');
                 const endDateField = document.getElementById('endDateControl');
                 const endTimeField = document.getElementById('endTimeControl');
+                const error = document.getElementById('errorMessage');
+
+                error.textContent = "";
+
+                if(reasonField == ""){
+                    error.textContent="入力";
+                    return;
+                }
                 
 
                 //届出内容が変わったら入力欄の表示を切り替える
