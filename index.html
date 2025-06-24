@@ -360,7 +360,7 @@
             });
 
         };
-   　　 res.header('Access-Control-Allow-Origin', origin);
+   　　
         async function fetchData(url, options) {
             try {
                 const response = await fetch(url, options);
@@ -376,7 +376,7 @@
         const options = {
             method: "GET",
             headers: {
-                
+                "Access-Control-Allow-Origin": "*",
                 "Content-Type": "application/json",
             },
         };
