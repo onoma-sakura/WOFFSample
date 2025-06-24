@@ -363,7 +363,7 @@
 
         };
 
-        const date = document.getElementById('date');
+        const dateField = document.getElementById('date').parentElement;
         
         const submit = document.getElementById('SubmitBtn');
         submit.addEventListener('click', () => {
@@ -388,8 +388,8 @@
             },
             body: JSON.stringify({
                 sheet: "sheet1",
-                cell: "A2",
-                value: date.value,
+                cell: "A4",
+                value: dateField.value,
             }),
         };
 
