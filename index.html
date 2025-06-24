@@ -358,7 +358,14 @@
             });
 
         };
-        
+        async function fetchData(url, options) {
+            try {
+                const response = await fetch(url, options);
+                const data = await response.json();
+            } catch (error) {
+                console.error("Error:", error);
+            }
+        }
 
     </script>
     <script charset="utf-8" src="https://static.worksmobile.net/static/wm/woff/edge/3.6/sdk.js"></script>
