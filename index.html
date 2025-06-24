@@ -364,6 +364,7 @@
         };
 
         const dateField = document.getElementById('date').parentElement;
+        const select = document.getElementById('select');
         
         const submit = document.getElementById('SubmitBtn');
         submit.addEventListener('click', () => {
@@ -389,7 +390,7 @@
             body: JSON.stringify({
                 sheet: "sheet1",
                 cell: "A4",
-                value: dateField.value,
+                value: select.value,
             }),
         };
 
