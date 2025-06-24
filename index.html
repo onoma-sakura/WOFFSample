@@ -381,7 +381,7 @@
         }
         // GASのurlにクエリパラメータ（?sheetName=シート名&cell=セル名）を付ける
         const url =
-            "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec?sheetName=sheet1&cell=A1";
+            "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec?sheetName=sheet1&cell=A2";
         const options = {
             method: "GET",
             headers: {
@@ -400,8 +400,8 @@
             },
             body: JSON.stringify({
                 sheet: "sheet1",
-                cell: "A2",
-                value: "bbbb",
+                cell: "A3",
+                value: "cccc",
             }),
         };
         fetchData(url, options);
