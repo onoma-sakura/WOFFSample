@@ -358,29 +358,7 @@
             });
 
         };
-        async function fetchData(url, options) {
-            try {
-                const response = await fetch(url, options);
-                const data = await response.json();
-            } catch (error) {
-                console.error("Error:", error);
-            }
-        }
-
-        // GASのurl
-        const url = "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec";
-        const options = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                sheet: "woff休暇申請",
-                cell: "セル名",
-                value: "値",
-            }),
-        };
-        fetchData(url, options);
+        
 
     </script>
     <script charset="utf-8" src="https://static.worksmobile.net/static/wm/woff/edge/3.6/sdk.js"></script>
