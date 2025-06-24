@@ -362,8 +362,13 @@
         };
 
         const button = document.getElementById('Get');
-        button.addEventListener('click',() => {
+        button.addEventListener('click', () => {
             fetchData(url, options);
+        })
+
+        const button2 = document.getElementById('Post');
+        button2.addEventListener('click', () => {
+            fetchData(url2, options2);
         })
 
         async function fetchData(url, options) {
@@ -385,7 +390,23 @@
                 //"Access-Control-Allow-Origin": "*",
             },
         };
-        
+
+        // GASのurl
+        const url2 = "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec";
+        const options2 = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded",
+            },
+            body: JSON.stringify({
+                sheet: "sheet1",
+                cell: "A2",
+                value: "bbbb",
+            }),
+        };
+        fetchData(url, options);
+
+
 
 
     </script>
