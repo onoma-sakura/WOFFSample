@@ -356,6 +356,19 @@
                         break;
                 }
 
+                const submit = document.getElementById('SubmitBtn');
+                submit.addEventListener('click', () => {
+                    fetchData(url3, options3);
+                })
+
+                async function fetchData(url, options) {
+                    try {
+                        const response = await fetch(url, options);
+                        const data = await response.json();
+                    } catch (error) {
+                        console.error("Error:", error);
+                    }
+                }
                 // GASのurl
                 const url3 = "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec";
                 const options3 = {
@@ -370,59 +383,46 @@
                     }),
                 };
 
-
             });
 
         };
 
-        const button = document.getElementById('Get');
-        button.addEventListener('click', () => {
-            fetchData(url, options);
-        })
+        // const button = document.getElementById('Get');
+        // button.addEventListener('click', () => {
+        //     fetchData(url, options);
+        // })
 
-        const button2 = document.getElementById('Post');
-        button2.addEventListener('click', () => {
-            fetchData(url2, options2);
-        })
+        // const button2 = document.getElementById('Post');
+        // button2.addEventListener('click', () => {
+        //     fetchData(url2, options2);
+        // })
 
-        const submit = document.getElementById('SubmitBtn');
-        submit.addEventListener('click', () => {
-            fetchData(url3, options3);
-        })
 
-        async function fetchData(url, options) {
-            try {
-                const response = await fetch(url, options);
-                const data = await response.json();
-            } catch (error) {
-                console.error("Error:", error);
-            }
-        }
         // GASのurlにクエリパラメータ（?sheetName=シート名&cell=セル名）を付ける
-        const url =
-            "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec?sheetName=sheet1&cell=A1";
-        const options = {
-            method: "GET",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/x-www-form-urlencoded",
-                //"Access-Control-Allow-Origin": "*",
-            },
-        };
+        // const url =
+        //     "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec?sheetName=sheet1&cell=A1";
+        // const options = {
+        //     method: "GET",
+        //     headers: {
+        //         Accept: "application/json",
+        //         "Content-Type": "application/x-www-form-urlencoded",
+        //         //"Access-Control-Allow-Origin": "*",
+        //     },
+        // };
 
-        // GASのurl
-        const url2 = "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec";
-        const options2 = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-            },
-            body: JSON.stringify({
-                sheet: "sheet1",
-                cell: "A2",
-                value: "bbbb",
-            }),
-        };
+        // // GASのurl
+        // const url2 = "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec";
+        // const options2 = {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/x-www-form-urlencoded",
+        //     },
+        //     body: JSON.stringify({
+        //         sheet: "sheet1",
+        //         cell: "A2",
+        //         value: "bbbb",
+        //     }),
+        // };
 
 
 
