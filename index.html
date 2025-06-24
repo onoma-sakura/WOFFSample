@@ -380,8 +380,8 @@
             }
         }
         
-        const select = document.getElementById('select');
         
+        const select = document.getElementById('select');
         // GASのurl
         const url3 = "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec";
         const options3 = {
@@ -390,10 +390,9 @@
                 "Content-Type": "application/x-www-form-urlencoded",
             },
             body: JSON.stringify({
-                dateField: document.getElementById('date').parentElement,
                 sheet: "sheet1",
                 cell: "A4",
-                value: dateField.value,
+                value: select.value,
             }),
         };
 
