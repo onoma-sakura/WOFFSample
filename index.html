@@ -360,12 +360,12 @@
             });
 
         };
-   　　 
+   　　 res.header('Access-Control-Allow-Origin', origin);
         async function fetchData(url, options) {
             try {
                 const response = await fetch(url, options);
                 const data = await response.json();
-                res.header('Access-Control-Allow-Origin', origin);
+                
             } catch (error) {
                 console.error("Error:", error);
             }
