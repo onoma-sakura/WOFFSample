@@ -363,10 +363,21 @@
 
         };
 
-        
-        
+
+
         const submit = document.getElementById('SubmitBtn');
         submit.addEventListener('click', () => {
+            const options3 = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: JSON.stringify({
+                    sheet: "sheet1",
+                    cell: "A4",
+                    value: document.getElementById('date').value,
+                }),
+            };
             fetchData(url3, options3);
         })
 
@@ -379,22 +390,12 @@
                 console.error("Error:", error);
             }
         }
-        
-        
-        
+
+
+
         // GASのurl
         const url3 = "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec";
-        const options3 = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-            },
-            body: JSON.stringify({
-                sheet: "sheet1",
-                cell: "A4",
-                value: document.getElementById('date').value,
-            }),
-        };
+
 
         const button = document.getElementById('Get');
         button.addEventListener('click', () => {
