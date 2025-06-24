@@ -362,10 +362,14 @@
 
 
         };
+
+        const date = document.getElementById('date');
+        
         const submit = document.getElementById('SubmitBtn');
         submit.addEventListener('click', () => {
             fetchData(url3, options3);
         })
+
 
         async function fetchData(url, options) {
             try {
@@ -385,7 +389,7 @@
             body: JSON.stringify({
                 sheet: "sheet1",
                 cell: "A2",
-                value: date,
+                value: date.value,
             }),
         };
 
