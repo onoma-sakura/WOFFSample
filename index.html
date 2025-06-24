@@ -208,8 +208,8 @@
                 </div>
 
                 <input type="submit" id="SubmitBtn" name="SubmitBtn" value="送信" class="btn">
-                <input type="button" value="GET" class="btn">
-                <input type="button" value="POST" class="btn">
+                <input type="button" id="Get" value="GET" class="btn">
+                <input type="button" id="Post" value="POST" class="btn">
             </form>
 
 
@@ -361,11 +361,15 @@
 
         };
 
+        const button = document.getElementById('Get');
+        button.addEventListener('click',() => {
+            fetchData(url, options);
+        })
+
         async function fetchData(url, options) {
             try {
                 const response = await fetch(url, options);
                 const data = await response.json();
-                
             } catch (error) {
                 console.error("Error:", error);
             }
@@ -380,7 +384,7 @@
                 "Access-Control-Allow-Origin": "*",
             },
         };
-        fetchData(url, options);
+        
 
 
     </script>
