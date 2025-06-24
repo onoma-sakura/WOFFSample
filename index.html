@@ -365,7 +365,7 @@
             try {
                 const response = await fetch(url, options);
                 const data = await response.json();
-                response.appendHeader("Access-Control-Allow-Origin" , "*")
+               
                 
             } catch (error) {
                 console.error("Error:", error);
@@ -378,6 +378,7 @@
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
+                 response.appendHeader("Access-Control-Allow-Origin" , "*"),
             },
         };
         fetchData(url, options);
