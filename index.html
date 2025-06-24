@@ -360,11 +360,12 @@
             });
 
         };
-   　　  Header set Access-Control-Allow-Origin "*"
+   　　 
         async function fetchData(url, options) {
             try {
                 const response = await fetch(url, options);
                 const data = await response.json();
+                Access-Control-Allow-Origin: *;
             } catch (error) {
                 console.error("Error:", error);
             }
