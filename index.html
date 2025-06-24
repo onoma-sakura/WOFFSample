@@ -1,4 +1,3 @@
- 'Access-Control-Allow-Origin': '*',
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -361,6 +360,7 @@
             });
 
         };
+   　　  Header set Access-Control-Allow-Origin "*"
         async function fetchData(url, options) {
             try {
                 const response = await fetch(url, options);
