@@ -377,6 +377,7 @@
                     value: document.getElementById('select').value,
                 }), 
             }
+                fetchData(url3, options3);
             } else if(document.getElementById('select').value == "早退"){
             const options4 = {
                 method: "POST",
@@ -389,9 +390,9 @@
                     value: document.getElementById('select').value,
                 }), 
             }
+                fetchData(url3, options4);
             };
-            fetchData(url3, options3);
-            fetchData(url3, options4);
+        
         });
 
 
