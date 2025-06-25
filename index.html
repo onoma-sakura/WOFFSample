@@ -372,13 +372,23 @@
                 },
                 body: JSON.stringify({
                     sheet: "sheet1",
-                    cell: "B4", 
-                    cell: "B5",
+                    cell: "B1",
                     value: document.getElementById('select').value,
+                }), 
+            };
+            const options4 = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: JSON.stringify({
+                    sheet: "sheet1",
+                    cell: "B2",
                     value: document.getElementById('time').value,
-                }),
+                }), 
             };
             fetchData(url3, options3);
+            fetchData(url3, options4);
         })
 
 
