@@ -372,8 +372,8 @@
                     },
                     body: JSON.stringify({
                         sheet: document.getElementById('select').value,
-                        cell: "A1",
-                        value: document.getElementById('date').value,
+                        cell: "A",
+                        value: [[document.getElementById('date').value, document.getElementById('date').value,]],
                     }),
                 }
                 fetchData(url3, options1);
