@@ -365,34 +365,70 @@
 
         const submit = document.getElementById('SubmitBtn');
         submit.addEventListener('click', () => {
-            if(document.getElementById('select').value == "遅刻"){
-            const options3 = {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded",
-                },
-                body: JSON.stringify({
-                    sheet: "sheet1",
-                    cell: "A1",
-                    value: document.getElementById('select').value,
-                }), 
-            }
+            if (document.getElementById('select').value == "有給休暇（1日）") {
+                const options1 = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: JSON.stringify({
+                        sheet: "sheet1",
+                        cell: "A1",
+                        value: document.getElementById('date').value,
+                    }),
+                }
+                const options2 = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: JSON.stringify({
+                        sheet: "sheet1",
+                        cell: "B1",
+                        value: document.getElementById('reason').value,
+                    }),
+                }
+                fetchData(url3, options1);
+                fetchData(url3, options2);
+            } else if (document.getElementById('select').value == "有給休暇（半日）") {
+                const options3 = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: JSON.stringify({
+                        sheet: "sheet2",
+                        cell: "A1",
+                        value: document.getElementById('date').value,
+                    }),
+                }
+                const options4 = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: JSON.stringify({
+                        sheet: "sheet2",
+                        cell: "B1",
+                        value: document.getElementById('time').value,
+                    }),
+                }
+                const options5 = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: JSON.stringify({
+                        sheet: "sheet2",
+                        cell: "C1",
+                        value: document.getElementById('reason').value,
+                    }),
+                }
                 fetchData(url3, options3);
-            } else if(document.getElementById('select').value == "早退"){
-            const options4 = {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded",
-                },
-                body: JSON.stringify({
-                    sheet: "sheet2",
-                    cell: "A1",
-                    value: document.getElementById('select').value,
-                }), 
-            }
                 fetchData(url3, options4);
+                fetchData(url3, options5);
             };
-        
+
         })
 
 
