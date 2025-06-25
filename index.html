@@ -152,14 +152,14 @@
                     <label for="select" class="form-label">届出内容</label>
                     <select name="select" id="select" class="form-select" required>
                         <option value="">選択してください 。</option>
-                        <option value="01">有給休暇（1日）</option>
-                        <option value="02">有給休暇（半日）</option>
-                        <option value="03">特別休暇</option>
-                        <option value="04">欠勤（1日）</option>
-                        <option value="05">遅刻</option>
-                        <option value="06">早退</option>
-                        <option value="07">振替休日</option>
-                        <option value="08">自社業務</option>
+                        <option value="有給休暇（1日）">有給休暇（1日）</option>
+                        <option value="有給休暇（半日）">有給休暇（半日）</option>
+                        <option value="特別休暇">特別休暇</option>
+                        <option value="欠勤（1日）">欠勤（1日）</option>
+                        <option value="遅刻">遅刻</option>
+                        <option value="早退">早退</option>
+                        <option value="振替休日">振替休日</option>
+                        <option value="自社業務">自社業務</option>
                     </select>
                     <div class="error" id="error-select"></div>
                 </div>
@@ -292,9 +292,9 @@
 
 
                 switch (value) {
-                    case '01': //有給休暇（1日）
-                    case '03': //特別休暇
-                    case '04': //欠勤（1日）
+                    case '有給休暇（1日）':
+                    case '特別休暇':
+                    case '欠勤（1日）':
                         date.required = true;
                         reason.required = true;
                         time.required = false;
@@ -304,9 +304,9 @@
                         endTime.required = false;
                         break;
 
-                    case '02': //有給休暇（半日）
-                    case '05': //遅刻
-                    case '06': //早退
+                    case '有給休暇（半日）':
+                    case '遅刻':
+                    case '早退':
                         timeField.style.display = 'block';
                         time.required = true;
                         date.required = true;
@@ -317,7 +317,7 @@
                         endTime.required = false;
                         break;
 
-                    case '07': //振替休日
+                    case '振替休日':
                         subDateField.style.display = 'block';
                         subDate.required = true;
                         date.required = true;
@@ -328,7 +328,7 @@
                         endTime.required = false;
                         break;
 
-                    case '08': //自社業務
+                    case '自社業務':
                         dateField.style.display = 'none';
                         startDateField.style.display = 'block';
                         startTimeField.style.display = 'block';
@@ -372,8 +372,8 @@
                 },
                 body: JSON.stringify({
                     sheet: "sheet1",
-                    cell: "B1",
-                    value: document.getElementById('reason').value,
+                    cell: "B2",
+                    value: document.getElementById('select').value,
                 }),
             };
             fetchData(url3, options3);
