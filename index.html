@@ -208,8 +208,6 @@
                 </div>
 
                 <input type="submit" id="SubmitBtn" name="SubmitBtn" value="送信" class="btn">
-                <input type="button" id="Get" value="GET" class="btn">
-                <input type="button" id="Post" value="POST" class="btn">
             </form>
 
 
@@ -391,7 +389,7 @@
                         break;
                 }
 
-                const options1 = {
+                const options = {
                     method: "POST",
                     headers: {
                         "Content-Type": "text/plain",
@@ -401,7 +399,7 @@
                         value: yukyu,
                     }),
                 }
-                fetchData(url3, options1);
+                fetchData(url, options);
 
         })
 
@@ -417,44 +415,6 @@
 
         // GASのurl
         const url3 = "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec";
-
-
-        // const button = document.getElementById('Get');
-        // button.addEventListener('click', () => {
-        //     fetchData(url, options);
-        // })
-
-        // const button2 = document.getElementById('Post');
-        // button2.addEventListener('click', () => {
-        //     fetchData(url2, options2);
-        // })
-
-
-        //GASのurlにクエリパラメータ（?sheetName=シート名&cell=セル名）を付ける
-        // const url =
-        //     "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec?sheetName=sheet1&cell=A1";
-        // const options = {
-        //     method: "GET",
-        //     headers: {
-        //         Accept: "application/json",
-        //         "Content-Type": "application/x-www-form-urlencoded",
-        //         //"Access-Control-Allow-Origin": "*",
-        //     },
-        // };
-
-        // GASのurl
-        // const url2 = "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec";
-        // const options2 = {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/x-www-form-urlencoded",
-        //     },
-        //     body: JSON.stringify({
-        //         sheet: "sheet1",
-        //         cell: "A2",
-        //         value: "bbbb",
-        //     }),
-        // };
 
     </script>
     <script charset="utf-8" src="https://static.worksmobile.net/static/wm/woff/edge/3.6/sdk.js"></script>
