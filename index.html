@@ -365,6 +365,7 @@
 
         const submit = document.getElementById('SubmitBtn');
         submit.addEventListener('click', () => {
+            if(document.getElementById('select').value == "遅刻"){
             const options3 = {
                 method: "POST",
                 headers: {
@@ -375,44 +376,22 @@
                     cell: "A1",
                     value: document.getElementById('select').value,
                 }), 
-            };
+            }
+            } else if(document.getElementById('select').value == "早退"){
             const options4 = {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded",
                 },
                 body: JSON.stringify({
-                    sheet: "sheet1",
-                    cell: "B1",
-                    value: document.getElementById('date').value,
+                    sheet: "sheet2",
+                    cell: "A1",
+                    value: document.getElementById('select').value,
                 }), 
-            };
-            const options5 = {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded",
-                },
-                body: JSON.stringify({
-                    sheet: "sheet1",
-                    cell: "C1",
-                    value: document.getElementById('time').value,
-                }), 
-            };
-            const options6 = {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded",
-                },
-                body: JSON.stringify({
-                    sheet: "sheet1",
-                    cell: "D1",
-                    value: document.getElementById('reason').value,
-                }), 
+            }
             };
             fetchData(url3, options3);
             fetchData(url3, options4);
-            fetchData(url3, options5);
-            fetchData(url3, options6);
         })
 
 
