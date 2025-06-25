@@ -427,6 +427,31 @@
                 fetchData(url3, options3);
                 fetchData(url3, options4);
                 fetchData(url3, options5);
+            } else if (document.getElementById('select').value == "特別休暇"){
+                const options6 = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: JSON.stringify({
+                        sheet: "sheet3",
+                        cell: "A1",
+                        value: document.getElementById('date').value,
+                    }),
+                }
+                const options7 = {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/x-www-form-urlencoded",
+                    },
+                    body: JSON.stringify({
+                        sheet: "sheet3",
+                        cell: "B1",
+                        value: document.getElementById('reason').value,
+                    }),
+                }
+                fetchData(url3, options6);
+                fetchData(url3, options7);
             };
 
         })
