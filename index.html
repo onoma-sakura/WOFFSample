@@ -363,8 +363,6 @@
 
         };
 
-
-
         const submit = document.getElementById('SubmitBtn');
         submit.addEventListener('click', () => {
             const options3 = {
@@ -374,8 +372,8 @@
                 },
                 body: JSON.stringify({
                     sheet: "sheet1",
-                    cell: "A3",
-                    value: document.getElementById('select').value,
+                    cell: "B1",
+                    value: document.getElementById('reason').value,
                 }),
             };
             fetchData(url3, options3);
