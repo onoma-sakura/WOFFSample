@@ -372,23 +372,11 @@
                     },
                     body: JSON.stringify({
                         sheet: document.getElementById('select').value,
-                        cell: "A1",
+                        cell: auto,
                         value: [document.getElementById('date').value, document.getElementById('time').value]
                     }),
                 }
-                const options2 = {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/x-www-form-urlencoded",
-                    },
-                    body: JSON.stringify({
-                        sheet: document.getElementById('select').value,
-                        cell: "B1",
-                        value: document.getElementById('reason').value,
-                    }),
-                }
                 fetchData(url3, options1);
-                fetchData(url3, options2);
 
         })
 
