@@ -372,7 +372,7 @@
                 },
                 body: JSON.stringify({
                     sheet: "sheet1",
-                    cell: "B1",
+                    cell: "A1",
                     value: document.getElementById('select').value,
                 }), 
             };
@@ -383,12 +383,36 @@
                 },
                 body: JSON.stringify({
                     sheet: "sheet1",
-                    cell: "B2",
+                    cell: "B1",
+                    value: document.getElementById('date').value,
+                }), 
+            };
+            const options5 = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: JSON.stringify({
+                    sheet: "sheet1",
+                    cell: "C1",
                     value: document.getElementById('time').value,
+                }), 
+            };
+            const options6 = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                },
+                body: JSON.stringify({
+                    sheet: "sheet1",
+                    cell: "D1",
+                    value: document.getElementById('reason').value,
                 }), 
             };
             fetchData(url3, options3);
             fetchData(url3, options4);
+            fetchData(url3, options5);
+            fetchData(url3, options6);
         })
 
 
@@ -401,51 +425,46 @@
             }
         }
 
-
-
         // GASのurl
         const url3 = "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec";
 
 
-        const button = document.getElementById('Get');
-        button.addEventListener('click', () => {
-            fetchData(url, options);
-        })
+        // const button = document.getElementById('Get');
+        // button.addEventListener('click', () => {
+        //     fetchData(url, options);
+        // })
 
-        const button2 = document.getElementById('Post');
-        button2.addEventListener('click', () => {
-            fetchData(url2, options2);
-        })
+        // const button2 = document.getElementById('Post');
+        // button2.addEventListener('click', () => {
+        //     fetchData(url2, options2);
+        // })
 
 
         //GASのurlにクエリパラメータ（?sheetName=シート名&cell=セル名）を付ける
-        const url =
-            "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec?sheetName=sheet1&cell=A1";
-        const options = {
-            method: "GET",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/x-www-form-urlencoded",
-                //"Access-Control-Allow-Origin": "*",
-            },
-        };
+        // const url =
+        //     "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec?sheetName=sheet1&cell=A1";
+        // const options = {
+        //     method: "GET",
+        //     headers: {
+        //         Accept: "application/json",
+        //         "Content-Type": "application/x-www-form-urlencoded",
+        //         //"Access-Control-Allow-Origin": "*",
+        //     },
+        // };
 
         // GASのurl
-        const url2 = "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec";
-        const options2 = {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-            },
-            body: JSON.stringify({
-                sheet: "sheet1",
-                cell: "A2",
-                value: "bbbb",
-            }),
-        };
-
-
-
+        // const url2 = "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec";
+        // const options2 = {
+        //     method: "POST",
+        //     headers: {
+        //         "Content-Type": "application/x-www-form-urlencoded",
+        //     },
+        //     body: JSON.stringify({
+        //         sheet: "sheet1",
+        //         cell: "A2",
+        //         value: "bbbb",
+        //     }),
+        // };
 
     </script>
     <script charset="utf-8" src="https://static.worksmobile.net/static/wm/woff/edge/3.6/sdk.js"></script>
