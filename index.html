@@ -283,8 +283,6 @@
                 endDateField.style.display = 'none';
                 endTimeField.style.display = 'none';
 
-
-
                 switch (value) {
                     case '有給休暇（1日）':
                     case '特別休暇':
@@ -349,15 +347,9 @@
                         time.required = false;
                         break;
                 }
-
-
-
             });
-
-
         };
 
-        const profileInfoElem = document.getElementById("userProfileInfo");
         const submit = document.getElementById('SubmitBtn');
         submit.addEventListener('click', () => {
             let yukyu = [];
@@ -365,21 +357,21 @@
                 case '有給休暇（1日）':
                 case '特別休暇':
                 case '欠勤（1日）':
-                    yukyu = [[document.getElementById('date').value, document.getElementById('reason').value,]];
+                    yukyu = [[document.getElementById("userProfileInfo"), document.getElementById('date').value, document.getElementById('reason').value,]];
                     break;
 
                 case '有給休暇（半日）':
                 case '遅刻':
                 case '早退':
-                    yukyu = [[document.getElementById('date').value, document.getElementById('time').value, document.getElementById('reason').value,]];
+                    yukyu = [[document.getElementById("userProfileInfo"), document.getElementById('date').value, document.getElementById('time').value, document.getElementById('reason').value,]];
                     break;
 
                 case '振替休日':
-                    yukyu = [[document.getElementById('date').value, document.getElementById('subDate').value, document.getElementById('reason').value,]];
+                    yukyu = [[document.getElementById("userProfileInfo"), document.getElementById('date').value, document.getElementById('subDate').value, document.getElementById('reason').value,]];
                     break;
 
                 case '自社業務':
-                    yukyu = [[document.getElementById('startDate').value, document.getElementById('startTime').value, document.getElementById('endDate').value, document.getElementById('endTime').value, document.getElementById('reason').value,]];
+                    yukyu = [[document.getElementById("userProfileInfo"), document.getElementById('startDate').value, document.getElementById('startTime').value, document.getElementById('endDate').value, document.getElementById('endTime').value, document.getElementById('reason').value,]];
                     break;
 
                 default:
@@ -393,7 +385,7 @@
                 },
                 body: JSON.stringify({
                     sheet: document.getElementById('select').value,
-                    value: [[profileInfoElem, yukyu,]]
+                    value: ukyu,
                 }),
             }
             fetchData(url, options);
