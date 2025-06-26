@@ -138,7 +138,7 @@
             <div id="userProfileInfo"></div>
         </div>
         <div class="wrapper">
-            <form id="myForm" action="#" onsubmit="return false;">
+            <form id="myForm" action="#" onsubmit="return check();">
                 <div class="form-title">
                     <h2>届出書</h2>
                     <p>
@@ -399,6 +399,22 @@
             } catch (error) {
                 console.error("Error:", error);
             }
+        }
+
+        function check() {
+
+            if (window.confirm('送信してよろしいですか？')) { // 確認ダイアログを表示
+
+                return true; // 「OK」時は送信を実行
+
+            }
+            else { // 「キャンセル」時の処理
+
+                window.alert('キャンセルされました'); // 警告ダイアログを表示
+                return false; // 送信を中止
+
+            }
+
         }
 
         // GASのurl
