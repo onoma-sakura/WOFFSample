@@ -249,7 +249,6 @@
                     console.log(err.code, err.message);
                 });
 
-            const name = profile.displayName;
 
             const select = document.getElementById('select');
             const dateField = document.getElementById('date').parentElement;
@@ -358,6 +357,7 @@
 
         };
 
+        const profileInfoElem = document.getElementById("userProfileInfo");
         const submit = document.getElementById('SubmitBtn');
         submit.addEventListener('click', () => {
             let yukyu = [];
@@ -393,7 +393,7 @@
                 },
                 body: JSON.stringify({
                     sheet: document.getElementById('select').value,
-                    value: yukyu,
+                    value: [[profileInfoElem, yukyu,]]
                 }),
             }
             fetchData(url, options);
