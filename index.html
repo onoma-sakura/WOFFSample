@@ -134,7 +134,7 @@
     <div class="container">
         <!-- ユーザープロフィール情報のセクション -->
         <div class="section" id="userProfileSection">
-            <h2>ユーザーのプロフィール情報</h2>
+            <h2>ユーザー名</h2>
             <div id="userProfileInfo"></div>
         </div>
         <div class="wrapper">
@@ -362,15 +362,15 @@
                 case '有給休暇（半日）':
                 case '遅刻':
                 case '早退':
-                    yukyu = [[document.getElementById("userProfileInfo"), document.getElementById('date').value, document.getElementById('time').value, document.getElementById('reason').value,]];
+                    yukyu = [[document.getElementById("userProfileInfo").innerText, document.getElementById("userProfileInfo"), document.getElementById('date').value, document.getElementById('time').value, document.getElementById('reason').value,]];
                     break;
 
                 case '振替休日':
-                    yukyu = [[document.getElementById("userProfileInfo"), document.getElementById('date').value, document.getElementById('subDate').value, document.getElementById('reason').value,]];
+                    yukyu = [[document.getElementById("userProfileInfo").innerText, document.getElementById("userProfileInfo"), document.getElementById('date').value, document.getElementById('subDate').value, document.getElementById('reason').value,]];
                     break;
 
                 case '自社業務':
-                    yukyu = [[document.getElementById("userProfileInfo"), document.getElementById('startDate').value, document.getElementById('startTime').value, document.getElementById('endDate').value, document.getElementById('endTime').value, document.getElementById('reason').value,]];
+                    yukyu = [[document.getElementById("userProfileInfo").innerText, document.getElementById("userProfileInfo"), document.getElementById('startDate').value, document.getElementById('startTime').value, document.getElementById('endDate').value, document.getElementById('endTime').value, document.getElementById('reason').value,]];
                     break;
 
                 default:
