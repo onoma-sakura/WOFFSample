@@ -350,7 +350,8 @@
         };
 
         const submit = document.getElementById('SubmitBtn');
-        submit.addEventListener('click', () => {
+        submit.addEventListener('click', (e) => {
+            e.preventDefault();
             let yukyu = [];
             switch (document.getElementById('select').value) {
                 case '有給休暇（1日）':
