@@ -356,7 +356,7 @@
                 case '有給休暇（1日）':
                 case '特別休暇':
                 case '欠勤（1日）':
-                    yukyu = [[document.getElementById("userProfileInfo").innerText, document.getElementById('date').value, document.getElementById('reason').value,]];
+                    yukyu = [[document.getElementById("userProfileInfo").innerText, document.getElementById('date').value.validity.valueMissing, document.getElementById('reason').value,]];
                     break;
 
                 case '有給休暇（半日）':
@@ -400,8 +400,6 @@
                 console.error("Error:", error);
             }
         }
-
-        
 
         // GASのurl
         const url = "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec";
