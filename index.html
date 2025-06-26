@@ -352,28 +352,46 @@
         const submit = document.getElementById('SubmitBtn');
         submit.addEventListener('click', () => {
             let yukyu = [];
+            let dateElem = document.getElementById('date');
+            let reasonElem = document.getElementById('reason');
+            let timeElem = document.getElementById('time');
+            let subDateElem = document.getElementById('subDate');
+            let startDateElem = document.getElementById('startDate');
+            let startTimeElem = document.getElementById('startTime');
+            let endDateElem = document.getElementById('endDate');
+            let endTimeElem = document.getElementById('endTime');
+
             switch (document.getElementById('select').value) {
                 case '有給休暇（1日）':
                 case '特別休暇':
                 case '欠勤（1日）':
-                    yukyu = [[document.getElementById("userProfileInfo").innerText, document.getElementById('date').value, document.getElementById('reason').value,]];
-                    if (yukyu.validity.valueMissing == true) {
-                         return false;
+                    yukyu = [[document.getElementById("userProfileInfo").innerText, dateElem.value, reasonElem.value,]];
+                    if (dateElem.validity.valueMissing == true || reasonElem.validity.valueMissing == true) {
+                        return false;
                     }
                     break;
 
                 case '有給休暇（半日）':
                 case '遅刻':
                 case '早退':
-                    yukyu = [[document.getElementById("userProfileInfo").innerText, document.getElementById('date').value, document.getElementById('time').value, document.getElementById('reason').value,]];
+                    yukyu = [[document.getElementById("userProfileInfo").innerText, dateElem.value, timeElem.value, reasonElem.value,]];
+                    if (dateElem.validity.valueMissing == true || timeElem.validity.valueMissing == true || reasonElem.validity.valueMissing == true) {
+                        return false;
+                    }
                     break;
 
                 case '振替休日':
-                    yukyu = [[document.getElementById("userProfileInfo").innerText, document.getElementById('date').value, document.getElementById('subDate').value, document.getElementById('reason').value,]];
+                    yukyu = [[document.getElementById("userProfileInfo").innerText, dateElem.value, subDateElem.value, reasonElem.value,]];
+                    if (dateElem.validity.valueMissing == true || subDateElem.validity.valueMissing == true || reasonElem.validity.valueMissing == true) {
+                        return false;
+                    }
                     break;
 
                 case '自社業務':
-                    yukyu = [[document.getElementById("userProfileInfo").innerText, document.getElementById('startDate').value, document.getElementById('startTime').value, document.getElementById('endDate').value, document.getElementById('endTime').value, document.getElementById('reason').value,]];
+                    yukyu = [[document.getElementById("userProfileInfo").innerText, startDateElem.value, startTimeElem.value, endDateElem.value, endTimeElem.value, reasonElem.value,]];
+                    if (startDateElem.validity.valueMissing == true || startTimeElem.validity.valueMissing == true || endDateElem.validity.valueMissing == true || endTimeElem.validity.valueMissing == true || reasonElem.validity.valueMissing == true) {
+                        return false;
+                    }
                     break;
 
                 default:
