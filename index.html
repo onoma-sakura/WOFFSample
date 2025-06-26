@@ -417,7 +417,7 @@
             let response = "";
             try {
                 response = await fetch(url, options);
-                if(response.status == 200) {
+                if (response.status == 200) {
                     alert("送信しました");
                 } else {
                     alert("失敗しました");
@@ -426,6 +426,11 @@
             } catch (error) {
                 alert("失敗しました");
                 console.error("Error:", error);
+            }
+            if (response.status == 200) {
+                alert("送信しました");
+            } else {
+                alert("失敗しました");
             }
         }
 
