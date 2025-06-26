@@ -357,7 +357,7 @@
                 case '特別休暇':
                 case '欠勤（1日）':
                     yukyu = [[document.getElementById("userProfileInfo").innerText, document.getElementById('date').value, document.getElementById('reason').value,]];
-                    if (document.getElementById('reason').validity.valueMissing == true) {
+                    if (yukyu.validity.valueMissing == true) {
                          return false;
                     }
                     break;
