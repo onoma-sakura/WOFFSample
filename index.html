@@ -410,14 +410,13 @@
             }
             fetchData(url, options);
 
-
         })
 
 
         async function fetchData(url, options) {
             try {
                 const response = await fetch(url, options);
-                if(response.response.status == 200) {
+                if(response.status == 200) {
                     alert("送信しました");
                 } else {
                     alert("失敗しました");
