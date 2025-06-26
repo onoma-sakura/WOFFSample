@@ -424,11 +424,7 @@
                 }
                 const data = await response.json();
             } catch (error) {
-                if(response.status == 200) {
-                    alert("送信しました");
-                } else {
-                    alert("失敗しました");
-                }
+                alert("失敗しました");
                 console.error("Error:", error);
             }
         }
