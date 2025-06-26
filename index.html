@@ -135,6 +135,7 @@
         <!-- ユーザープロフィール情報のセクション -->
         <div class="section" id="userProfileSection">
             <h2>ユーザーのプロフィール情報</h2>
+            <p>woff.getProfile() メソッドでログイン中のユーザーのプロフィール情報を取得して表示しています。</p>
             <div id="userProfileInfo"></div>
         </div>
         <div class="wrapper">
@@ -356,45 +357,77 @@
 
         };
 
+        woff
+            .init({
+                woffId: woffId
+            })
+            .then(() => {
+                woff.getProfile().then(profile => {
+                    const profileInfoElem = document.getElementById("userProfileInfo");
+                    profileInfoElem.innerHTML = `
+                    ユーザー名: ${profile.displayName}
+                `;
+                }).catch(error => {
+                    console.error('Profile error:', error);
+                    woff.login();
+                    woff
+                        .init({
+                            woffId: woffId
+                        })
+                        .then(() => {
+                            woff.getProfile().then(profile => {
+                                const profileInfoElem = document.getElementById("userProfileInfo");
+                                profileInfoElem.innerHTML = `
+                    ユーザー名: ${profile.displayName}
+                `;
+                            }).catch(error => {
+                                console.error('Profile error:', error);
+                            })
+                        })
+                })
+            })
+            .catch((err) => {
+                console.log(err.code, err.message);
+            });
         const submit = document.getElementById('SubmitBtn');
         submit.addEventListener('click', () => {
             let yukyu = [];
             switch (document.getElementById('select').value) {
-                    case '有給休暇（1日）':
-                    case '特別休暇':
-                    case '欠勤（1日）':
-                        yukyu = [[document.getElementById('date').value, document.getElementById('reason').value,]];
-                        break;
+                case '有給休暇（1日）':
+                case '特別休暇':
+                case '欠勤（1日）':
+                    yukyu = [[profile.displayName,document.getElementById('date').value, document.getElementById('reason').value,]];
+                    break;
 
-                    case '有給休暇（半日）':
-                    case '遅刻':
-                    case '早退':
-                        yukyu = [[document.getElementById('date').value, document.getElementById('time').value, document.getElementById('reason').value,]];
-                        break;
+                case '有給休暇（半日）':
+                case '遅刻':
+                case '早退':
+                    yukyu = [[document.getElementById('date').value, document.getElementById('time').value, document.getElementById('reason').value,]];
+                    break;
 
-                    case '振替休日':
-                        yukyu = [[document.getElementById('date').value, document.getElementById('subDate').value, document.getElementById('reason').value,]];
-                        break;
+                case '振替休日':
+                    yukyu = [[document.getElementById('date').value, document.getElementById('subDate').value, document.getElementById('reason').value,]];
+                    break;
 
-                    case '自社業務':
-                        yukyu = [[document.getElementById('startDate').value, document.getElementById('startTime').value, document.getElementById('endDate').value, document.getElementById('endTime').value, document.getElementById('reason').value,]];
-                        break;
+                case '自社業務':
+                    yukyu = [[document.getElementById('startDate').value, document.getElementById('startTime').value, document.getElementById('endDate').value, document.getElementById('endTime').value, document.getElementById('reason').value,]];
+                    break;
 
-                    default:
-                        break;
-                }
+                default:
+                    break;
+            }
 
-                const options = {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "text/plain",
-                    },
-                    body: JSON.stringify({
-                        sheet: document.getElementById('select').value,
-                        value: yukyu,
-                    }),
-                }
-                fetchData(url, options);
+            const options = {
+                method: "POST",
+                headers: {
+                    "Content-Type": "text/plain",
+                },
+                body: JSON.stringify({
+                    sheet: document.getElementById('select').value,
+                    value: yukyu,
+                }),
+            }
+            fetchData(url, options);
 
         })
 
