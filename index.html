@@ -414,9 +414,9 @@
 
 
         async function fetchData(url, options) {
+            const response = "";
             try {
-                const response = await fetch(url, options);
-                
+                response = await fetch(url, options);
                 const data = await response.json();
             } catch (error) {
                 if(response.status == 200) {
@@ -429,7 +429,7 @@
         }
 
         // GASのurl
-        const url = "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEKcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec";
+        const url = "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec";
 
     </script>
     <script charset="utf-8" src="https://static.worksmobile.net/static/wm/woff/edge/3.6/sdk.js"></script>
