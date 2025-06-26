@@ -350,7 +350,9 @@
         };
 
         const submit = document.getElementById('SubmitBtn');
+        const button = document.querySelector('SubmitBtn');
         submit.addEventListener('click', () => {
+            button.disabled = false;
             let yukyu = [];
             let dateElem = document.getElementById('date');
             let reasonElem = document.getElementById('reason');
@@ -367,6 +369,7 @@
                 case '欠勤（1日）':
                     yukyu = [[document.getElementById("userProfileInfo").innerText, dateElem.value, reasonElem.value,]];
                     if (dateElem.validity.valueMissing == true || reasonElem.validity.valueMissing == true) {
+                        
                         return false;
                     }
                     break;
@@ -419,6 +422,7 @@
                 response = await fetch(url, options);
                 if (response.status == 200) {
                     alert("送信しました");
+                    
                 }
                 const data = await response.json();
             } catch (error) {
