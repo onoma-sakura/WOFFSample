@@ -236,7 +236,7 @@
                                 woff.getProfile().then(profile => {
                                     const profileInfoElem = document.getElementById("userProfileInfo");
                                     profileInfoElem.innerHTML = `
-                    ユーザー名: ${profile.displayName}
+                    ${profile.displayName}
                 `;
                                 }).catch(error => {
                                     console.error('Profile error:', error);
@@ -247,7 +247,6 @@
                 .catch((err) => {
                     console.log(err.code, err.message);
                 });
-
 
             const select = document.getElementById('select');
             const dateField = document.getElementById('date').parentElement;
@@ -367,7 +366,6 @@
                 case '欠勤（1日）':
                     yukyu = [[document.getElementById("userProfileInfo").innerText, dateElem.value, reasonElem.value,]];
                     if (dateElem.validity.valueMissing == true || reasonElem.validity.valueMissing == true) {
-                        
                         return false;
                     }
                     break;
@@ -420,7 +418,6 @@
                 response = await fetch(url, options);
                 if (response.status == 200) {
                     alert("送信しました");
-                    
                 }
                 const data = await response.json();
             } catch (error) {
