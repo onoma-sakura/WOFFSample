@@ -294,8 +294,6 @@
                         endTime.required = false;
                         break;
 
-                    case '有給休暇（半日）':
-                    case '遅刻':
                     case '早退':
                         timeField.style.display = 'block';
                         date.required = true;
@@ -318,6 +316,8 @@
                         endTime.required = false;
                         break;
 
+                    case '有給休暇（半日）':
+                    case '遅刻':
                     case '自社業務':
                         dateField.style.display = 'none';
                         startDateField.style.display = 'block';
@@ -370,8 +370,6 @@
                     }
                     break;
 
-                case '有給休暇（半日）':
-                case '遅刻':
                 case '早退':
                     yukyu = [[document.getElementById("userProfileInfo").innerText, dateElem.value, timeElem.value, reasonElem.value,]];
                     if (dateElem.validity.valueMissing == true || timeElem.validity.valueMissing == true || reasonElem.validity.valueMissing == true) {
@@ -386,6 +384,8 @@
                     }
                     break;
 
+                case '有給休暇（半日）':
+                case '遅刻':
                 case '自社業務':
                     yukyu = [[document.getElementById("userProfileInfo").innerText, startDateElem.value, startTimeElem.value, endDateElem.value, endTimeElem.value, reasonElem.value,]];
                     if (startDateElem.validity.valueMissing == true || startTimeElem.validity.valueMissing == true || endDateElem.validity.valueMissing == true || endTimeElem.validity.valueMissing == true || reasonElem.validity.valueMissing == true) {
