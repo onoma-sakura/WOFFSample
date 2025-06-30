@@ -247,7 +247,6 @@
                 .catch((err) => {
                     console.log(err.code, err.message);
                 });
-            let token = woff.getAccessToken();
 
             const select = document.getElementById('select');
             const dateField = document.getElementById('date').parentElement;
@@ -398,6 +397,7 @@
                     break;
             }
 
+            let token = woff.getAccessToken();
             
             const options = {
                 method: "POST",
