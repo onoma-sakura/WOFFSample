@@ -215,8 +215,6 @@
 
     <script>
         window.onload = function () {
-            let token = woff.getAccessToken();
-
             woff
                 .init({
                     woffId: woffId
@@ -249,6 +247,7 @@
                 .catch((err) => {
                     console.log(err.code, err.message);
                 });
+            let token = woff.getAccessToken();
 
             const select = document.getElementById('select');
             const dateField = document.getElementById('date').parentElement;
