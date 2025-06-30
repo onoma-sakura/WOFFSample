@@ -397,14 +397,18 @@
                     break;
             }
 
+            let token = woff.getAccessToken();
+
             const options = {
                 method: "POST",
                 headers: {
-                    "Content-Type": "text/plain",
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " +token,
                 },
                 body: JSON.stringify({
-                    sheet: document.getElementById('select').value,
-                    value: yukyu,
+                    summary: document.getElementById('select').value,
+                    date: dateElem.value,
+                    description: reasonElem.value,
                 }),
             }
             submit.disabled = true;
@@ -427,7 +431,7 @@
         }
 
         // GASのurl
-        const url = "https://script.google.com/macros/s/AKfycbwfDS_bPQFXHa8BjDsEK6lnVcvaXv-MVQNNJJDGB5-eQnVZnmBzf6F2yNSC3qCkBQBbaA/exec";
+        const url = "https://www.worksapis.com/v1.0/users/me/calendars/c_400184405_1adb0d84-f287-47b6-875e-0f21d8c62a9c/events";
 
     </script>
     <script charset="utf-8" src="https://static.worksmobile.net/static/wm/woff/edge/3.6/sdk.js"></script>
