@@ -397,12 +397,12 @@
                 default:
                     break;
             }
-            //let token = woff.getAccessToken();
+            let token = woff.getAccessToken();
 
             const options = {
                 method: "POST",
                 headers: {
-                    "Authorization": "Bearer "+ "jp1AAABLJKScWvxeh/H8Ooa46ijbzfUNikkaIQl8HB6b4Xy7YGxKXL4HFunIBc/lvFrS4QVXEzPH1roqlWtKo6h2kjfJymKnLgGhLDWV87NiGWCUZBr9iDhrZt4rB8IshQDQeHy4gE49/KsvOxH57x8S3HAj/whGb9y9KABVXaYubp71KV95vf340tmbOFBz0GxlqYNLrHvusNCNrzaHeIy73xG2kU3sU0d+TWYjJaAI0UeDHgj/j06q3vE0sE6MQIoQ/nOOhPB1f/k6aDvhIvMUgwmBkYBvz3g7e63VUVc0imkJEboltmn8Q0KDLtqcbMmVs+is9TzvTKSKz0Debxlrx70YALAq2GaVvxHXiCrQdUBGA9ZXONCd+zdsoj/ZM1HuuxjA24wEM7fIE8KltD6JU4Cuy0=.kwiu9yNovfcs8Rumz2QSOg",
+                    "Authorization": "Bearer " + token,
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
@@ -410,6 +410,10 @@
                         "summary": document.getElementById('select').value,
                         "start": {
                             "date": dateElem.value,
+                        },
+                        "end": {
+                            "dateTime": "2025-06-27T20:00:00",
+                            "timeZone": "Asia/Tokyo"
                         },
                         "description": reasonElem.value,
                     }],
