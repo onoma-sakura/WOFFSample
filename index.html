@@ -402,13 +402,16 @@
             const options = {
                 method: "POST",
                 headers: {
-                    "Content-Type": "text/plain",
-                    "Authorization": "Bearer " +token,
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + token,
                 },
                 body: JSON.stringify({
-                    summary: document.getElementById('select').value,
-                    date: dateElem.value,
-                    description: reasonElem.value,
+                    "eventComponents": [{
+                        summary: document.getElementById('select').value,
+                        date: dateElem.value,
+                        description: reasonElem.value,
+                    }],
+                    "sendNotification": true
                 }),
             }
             submit.disabled = true;
